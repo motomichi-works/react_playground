@@ -10,7 +10,7 @@ type Props = {
 const Counter: React.VFC<Props> = ({ count, increment, reset }) => (
   <div className={styles.Counter}>
     <div className={styles.HeadingWrapper}>
-      <Heading001 text="カウンター" modifierClassNames={['Lv3']} />
+      <Heading001 text="カウンター" modifierClassNames={['m_Lv3']} />
     </div>
     <div className={styles.MainContentsWrapper}>
       <div className={styles.NumberBoard}>{count}</div>

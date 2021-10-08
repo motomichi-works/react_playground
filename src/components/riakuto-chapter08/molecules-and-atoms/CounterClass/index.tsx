@@ -6,7 +6,7 @@ class CounterClass extends Component {
   render(): ReactElement {
     return (
       <div>
-        <Heading001 text="カウンター" modifierClassNames={['Lv3']} />
+        <Heading001 text="カウンター" modifierClassNames={['m_Lv3']} />
         <div>
           <p>カウンター</p>
         </div>

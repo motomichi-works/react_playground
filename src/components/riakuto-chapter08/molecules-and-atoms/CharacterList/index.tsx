@@ -15,7 +15,7 @@ type Props = {
 
 const CharacterList: React.VFC<Props> = ({ school, characters }) => (
   <div className="CharacterList">
-    <Heading001 text={school} modifierClassNames={['Lv3']} />
+    <Heading001 text={school} modifierClassNames={['m_Lv3']} />
     {characters.map((character) => (
       <ul key={character.id} className={styles.List}>
         <li>{character.name}</li>
