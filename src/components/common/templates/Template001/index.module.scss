@@ -1,0 +1,39 @@
+@import 'styles/shared/index';
+
+.Template001 {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100vh;
+  background-color: #f7f7f7;
+
+  @include mq(md) {
+    min-height: 0;
+  }
+}
+
+.PageHeadingWrapper {
+  width: 1200px;
+  padding: 0 8px;
+  margin: 40px auto 0;
+
+  @include mq(lg) {
+    width: 100%;
+  }
+}
+
+.MainContentsWrapper {
+  width: 1200px;
+  padding: 40px 8px 120px;
+  margin: 0 auto;
+
+  @include mq(lg) {
+    width: 100%;
+  }
+}
+
+.FooterWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}

@@ -1,0 +1,25 @@
+@import 'styles/shared/index';
+
+.Footer {
+  padding: 8px 0;
+  background-color: #222;
+}
+
+.CopyWrapper {
+  box-sizing: border-box;
+  width: 1200px;
+  padding: 0 8px;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+
+  @include mq(lg) {
+    width: 100%;
+  }
+}
+
+.Copy {
+  font-size: 12px;
+  color: #fff;
+  text-decoration: none;
+}

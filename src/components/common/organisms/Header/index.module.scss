@@ -1,0 +1,30 @@
+@import 'styles/shared/index';
+
+.Header {
+  padding: 12px 0;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.Inner {
+  box-sizing: border-box;
+  width: 1200px;
+  padding: 0 8px;
+  margin: 0 auto;
+
+  @include mq(lg) {
+    width: 100%;
+  }
+}
+
+.Logo {
+  padding: 4px 8px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #222;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}

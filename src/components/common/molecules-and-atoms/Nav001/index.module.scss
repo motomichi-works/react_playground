@@ -1,0 +1,12 @@
+.Nav001 {
+  display: block;
+}
+
+.Item {
+  padding-left: 1em;
+
+  &::before {
+    margin-left: -1em;
+    content: '・';
+  }
+}

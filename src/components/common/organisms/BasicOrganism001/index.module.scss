@@ -1,0 +1,18 @@
+.BasicOrganism001 {
+  padding: 1px 16px;
+  background-color: #fff;
+
+  // padding-topを補完する初期値
+  > :first-child {
+    margin-top: 15px;
+  }
+
+  // padding-bottomを補完する初期値
+  > :last-child {
+    margin-bottom: 39px;
+  }
+}
+
+.Body {
+  margin-top: 24px;
+}
