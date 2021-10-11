@@ -1,3 +1,4 @@
+import Card001 from 'components/common/molecules-and-atoms/Card001';
 import Heading001 from 'components/common/molecules-and-atoms/Heading001';
 import styles from './index.module.scss';
 
@@ -7,23 +8,28 @@ type Props = {
   reset: () => void;
 };
 
-const Counter: React.VFC<Props> = ({ count, increment, reset }) => (
-  <div className={styles.Counter}>
-    <div className={styles.HeadingWrapper}>
-      <Heading001 text="カウンター" modifierClassNames={['m_Lv3']} />
-    </div>
-    <div className={styles.MainContentsWrapper}>
-      <div className={styles.NumberBoard}>{count}</div>
-      <div className={styles.ButtonRow}>
-        <button type="button" className={styles.Button} onClick={reset}>
-          Reset
-        </button>
-        <button type="button" className={styles.Button} onClick={increment}>
-          +1
-        </button>
+const UseStateSample: React.VFC<Props> = ({ count, increment, reset }) => {
+  const buttons = [
+    {
+      label: 'reset',
+      handleClick: reset,
+    },
+    {
+      label: '+1',
+      handleClick: increment,
+    },
+  ];
+
+  return (
+    <div className={styles.UseStateSample}>
+      <div className={styles.HeadingWrapper}>
+        <Heading001 text="カウンター" modifierClassNames={['m_Lv3']} />
+      </div>
+      <div className={styles.MainContentsWrapper}>
+        <Card001 count={count} buttons={buttons} />
       </div>
     </div>
-  </div>
-);
+  );
+};
 
-export default Counter;
+export default UseStateSample;
