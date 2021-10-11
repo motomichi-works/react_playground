@@ -8,6 +8,10 @@
   padding: 0 32px;
   font-size: px_to_rem(64);
   text-align: center;
+
+  &.m_EmpasisColor {
+    color: #f00;
+  }
 }
 
 .ButtonRow {
