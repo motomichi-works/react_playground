@@ -20,9 +20,16 @@ const UseStateSample: React.VFC<Props> = ({ count, increment, reset }) => {
   ];
 
   return (
-    <Frame001 headingText="カウンター">
-      <Card001 count={count} buttons={buttons} />
-    </Frame001>
+    <>
+      <Frame001 headingText="カウンター">
+        <Card001 count={count} buttons={buttons} />
+      </Frame001>
+      <Frame001 headingText="このセクションで学んだポイント">
+        <ul>
+          <li>・useState()の使い方。</li>
+        </ul>
+      </Frame001>
+    </>
   );
 };
 

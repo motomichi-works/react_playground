@@ -15,9 +15,19 @@ const UseEffectSample: React.VFC<Props> = ({ timeLeft, reset }) => {
   ];
 
   return (
-    <Frame001 headingText="タイマー">
-      <Card001 count={timeLeft} buttons={buttons} />
-    </Frame001>
+    <>
+      <Frame001 headingText="タイマー">
+        <Card001 count={timeLeft} buttons={buttons} />
+      </Frame001>
+      <Frame001 headingText="このセクションで学んだポイント">
+        <ul>
+          <li>
+            ・useEffect()はdependencies
+            arrayの要素が更新されたときだけ処理を実行する。
+          </li>
+        </ul>
+      </Frame001>
+    </>
   );
 };
 
