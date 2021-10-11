@@ -1,6 +1,5 @@
 import Card001 from 'components/common/molecules-and-atoms/Card001';
-import Heading001 from 'components/common/molecules-and-atoms/Heading001';
-import styles from './index.module.scss';
+import Frame001 from 'components/common/molecules-and-atoms/Frame001';
 
 type Props = {
   count: number;
@@ -21,14 +20,9 @@ const UseStateSample: React.VFC<Props> = ({ count, increment, reset }) => {
   ];
 
   return (
-    <div className={styles.UseStateSample}>
-      <div className={styles.HeadingWrapper}>
-        <Heading001 text="カウンター" modifierClassNames={['m_Lv3']} />
-      </div>
-      <div className={styles.MainContentsWrapper}>
-        <Card001 count={count} buttons={buttons} />
-      </div>
-    </div>
+    <Frame001 headingText="カウンター">
+      <Card001 count={count} buttons={buttons} />
+    </Frame001>
   );
 };
 
