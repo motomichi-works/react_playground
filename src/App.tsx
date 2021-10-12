@@ -5,6 +5,7 @@ import ExamplesHoge from 'containers/ExamplesHoge';
 import Home from 'containers/Home';
 import RiakutoChapter08 from 'containers/RiakutoChapter08';
 import RiakutoChapter09 from 'containers/RiakutoChapter09';
+import RiakutoChapter11 from 'containers/RiakutoChapter11';
 
 const App: React.FC = () => (
   <Router>
@@ -14,6 +15,7 @@ const App: React.FC = () => (
       <Route exact path={paths.examplesHoge} component={ExamplesHoge} />
       <Route exact path={paths.riakutoChapter08} component={RiakutoChapter08} />
       <Route exact path={paths.riakutoChapter09} component={RiakutoChapter09} />
+      <Route exact path={paths.riakutoChapter11} component={RiakutoChapter11} />
     </Switch>
   </Router>
 );
