@@ -46,7 +46,7 @@ const MemoizeSample: React.VFC<Props> = ({ timeLeft, reset, primes }) => {
           modifierClassNames={modifierClassNames}
         />
       </Frame001>
-      <Frame001 headingText="このセクションで学んだポイント">
+      <Frame001 headingText="この節で学んだポイント">
         <List001 items={items} />
       </Frame001>
     </>

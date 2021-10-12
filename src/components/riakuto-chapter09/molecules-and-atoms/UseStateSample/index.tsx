@@ -34,7 +34,7 @@ const UseStateSample: React.VFC<Props> = ({ count, increment, reset }) => {
       <Frame001 headingText="カウンター">
         <Card001 count={count} buttons={buttons} />
       </Frame001>
-      <Frame001 headingText="このセクションで学んだポイント">
+      <Frame001 headingText="この節で学んだポイント">
         <List001 items={items} />
       </Frame001>
     </>

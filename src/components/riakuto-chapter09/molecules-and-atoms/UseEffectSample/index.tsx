@@ -30,7 +30,7 @@ const UseEffectSample: React.VFC<Props> = ({ timeLeft, reset }) => {
       <Frame001 headingText="タイマー">
         <Card001 count={timeLeft} buttons={buttons} />
       </Frame001>
-      <Frame001 headingText="このセクションで学んだポイント">
+      <Frame001 headingText="この節で学んだポイント">
         <List001 items={items} />
       </Frame001>
     </>
