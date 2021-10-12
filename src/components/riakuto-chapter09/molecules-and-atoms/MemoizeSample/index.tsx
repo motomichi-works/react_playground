@@ -1,5 +1,6 @@
 import Card001 from 'components/common/molecules-and-atoms/Card001';
 import Frame001 from 'components/common/molecules-and-atoms/Frame001';
+import List001, { Items } from 'components/common/molecules-and-atoms/List001';
 
 type Props = {
   timeLeft: number;
@@ -19,6 +20,23 @@ const MemoizeSample: React.VFC<Props> = ({ timeLeft, reset, primes }) => {
     ? ['m_EmpasisColor']
     : [];
 
+  const items: Items = [
+    [{ tagName: 'div', content: 'useMemo()で値をメモ化できる。' }],
+    [{ tagName: 'div', content: 'useCallback()で関数をメモ化できる。' }],
+    [
+      {
+        tagName: 'div',
+        content: 'メモ化した値をdependencies arrayの要素として渡す。',
+      },
+    ],
+    [
+      {
+        tagName: 'div',
+        content: 'useRef()で関数コンポーネントの外に値を保持できる。',
+      },
+    ],
+  ];
+
   return (
     <>
       <Frame001 headingText="タイマー">
@@ -29,12 +47,7 @@ const MemoizeSample: React.VFC<Props> = ({ timeLeft, reset, primes }) => {
         />
       </Frame001>
       <Frame001 headingText="このセクションで学んだポイント">
-        <ul>
-          <li>・useMemo()で値をメモ化できる。</li>
-          <li>・useCallback()で関数をメモ化できる。</li>
-          <li>・メモ化した値をdependencies arrayの要素として渡す。</li>
-          <li>・useRef()で関数コンポーネントの外に値を保持できる。</li>
-        </ul>
+        <List001 items={items} />
       </Frame001>
     </>
   );
