@@ -2,7 +2,7 @@ import styles from './index.module.scss';
 
 type Button = {
   label: string;
-  handleClick: () => void;
+  handleClick: () => void | undefined;
 };
 
 type Props = {
