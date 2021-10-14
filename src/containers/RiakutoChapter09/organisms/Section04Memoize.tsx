@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import BasicOrganism001 from 'components/common/organisms/BasicOrganism001';
-import MemoizeSample from 'components/riakuto-chapter09/molecules-and-atoms/MemoizeSample';
+import MemoizeSample from 'components/riakuto-chapter09/molecules/MemoizeSample';
 import { getPrimes } from 'utils/math-tool';
 
 type Props = {

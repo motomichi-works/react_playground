@@ -1,6 +1,6 @@
-import Card001 from 'components/common/molecules-and-atoms/Card001';
-import Frame001 from 'components/common/molecules-and-atoms/Frame001';
-import List001, { Items } from 'components/common/molecules-and-atoms/List001';
+import Card001 from 'components/common/molecules/Card001';
+import Frame001 from 'components/common/molecules/Frame001';
+import List001, { Items } from 'components/common/molecules/List001';
 
 type Props = {
   timeLeft: number;

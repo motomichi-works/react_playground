@@ -1,8 +1,8 @@
 import BasicOrganism001 from 'components/common/organisms/BasicOrganism001';
 import ColorfulBeadsContainer from 'containers/RiakutoChapter11/molecules/ColorfulBeadsContainer';
 import CounterBoardHocContainer from 'containers/RiakutoChapter11/molecules/CounterBoardHocContainer';
-import Frame001 from 'components/common/molecules-and-atoms/Frame001';
-import List001, { Items } from 'components/common/molecules-and-atoms/List001';
+import Frame001 from 'components/common/molecules/Frame001';
+import List001, { Items } from 'components/common/molecules/List001';
 
 const Section02HocRedux: React.VFC = () => {
   const items: Items = [

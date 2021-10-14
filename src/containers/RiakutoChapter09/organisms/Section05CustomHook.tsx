@@ -1,5 +1,5 @@
 import BasicOrganism001 from 'components/common/organisms/BasicOrganism001';
-import CustomHookSample from 'components/riakuto-chapter09/molecules-and-atoms/CustomHookSample';
+import CustomHookSample from 'components/riakuto-chapter09/molecules/CustomHookSample';
 import useTimer from 'hooks/use-timer';
 
 type Props = {

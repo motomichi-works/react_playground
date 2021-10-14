@@ -6,7 +6,7 @@ import {
   increment,
 } from 'stores/riakuto-chapter11-section02/actions';
 import { CounterState } from 'stores/riakuto-chapter11-section02/reducer';
-import CounterBoard from 'components/riakuto-chapter11/molecules-and-atoms/CounterBoard';
+import CounterBoard from 'components/riakuto-chapter11/molecules/CounterBoard';
 
 const CounterBoardHooksContainer: VFC = () => {
   const count = useSelector<CounterState, number>((state) => state.count);

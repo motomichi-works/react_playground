@@ -7,7 +7,7 @@ import {
   increment,
 } from 'stores/riakuto-chapter11-section02/actions';
 import { CounterState } from 'stores/riakuto-chapter11-section02/reducer';
-import CounterBoardHocContainer from 'components/riakuto-chapter11/molecules-and-atoms/CounterBoard';
+import CounterBoardHocContainer from 'components/riakuto-chapter11/molecules/CounterBoard';
 
 type StateProps = { count: number };
 type DispatchProps = {

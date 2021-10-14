@@ -1,7 +1,7 @@
 import { VFC } from 'react';
 import { useSelector } from 'react-redux';
 
-import ColorfulBeads from 'components/riakuto-chapter11/molecules-and-atoms/ColorfulBeads';
+import ColorfulBeads from 'components/riakuto-chapter11/molecules/ColorfulBeads';
 import { CounterState } from 'stores/riakuto-chapter11-section02/reducer';
 
 const ColorfulBeadsContainer: VFC = () => {

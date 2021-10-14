@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import BasicOrganism001 from 'components/common/organisms/BasicOrganism001';
-import UseStateSample from 'components/riakuto-chapter09/molecules-and-atoms/UseStateSample';
+import UseStateSample from 'components/riakuto-chapter09/molecules/UseStateSample';
 
 const Section02UseState: React.VFC = () => {
   const [count, setCount] = useState(0);

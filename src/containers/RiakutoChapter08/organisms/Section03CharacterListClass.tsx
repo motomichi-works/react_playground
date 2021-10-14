@@ -2,7 +2,7 @@ import { Component, ReactElement } from 'react';
 import BasicOrganism001 from 'components/common/organisms/BasicOrganism001';
 import CharacterListClass, {
   Character,
-} from 'components/riakuto-chapter08/molecules-and-atoms/CharacterListClass';
+} from 'components/riakuto-chapter08/molecules/CharacterListClass';
 
 class Section03CharacterListClass extends Component {
   characters: Character[] = [

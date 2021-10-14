@@ -1,6 +1,6 @@
 import { Component, ReactElement } from 'react';
 import BasicOrganism001 from 'components/common/organisms/BasicOrganism001';
-import ConterClass from 'components/riakuto-chapter08/molecules-and-atoms/CounterClass';
+import ConterClass from 'components/riakuto-chapter08/molecules/CounterClass';
 
 type State = { count: number };
 

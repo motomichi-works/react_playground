@@ -1,4 +1,4 @@
-import Heading001 from 'components/common/molecules-and-atoms/Heading001';
+import Heading001 from 'components/common/molecules/Heading001';
 import styles from './index.module.scss';
 
 type Props = {

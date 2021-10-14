@@ -1,7 +1,7 @@
 import BasicOrganism001 from 'components/common/organisms/BasicOrganism001';
 import CharacterList, {
   Character,
-} from 'components/riakuto-chapter08/molecules-and-atoms/CharacterList';
+} from 'components/riakuto-chapter08/molecules/CharacterList';
 
 const Section02Props: React.VFC = () => {
   const characters: Character[] = [

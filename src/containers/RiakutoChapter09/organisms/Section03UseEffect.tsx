@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import BasicOrganism001 from 'components/common/organisms/BasicOrganism001';
-import UseEffectSample from 'components/riakuto-chapter09/molecules-and-atoms/UseEffectSample';
+import UseEffectSample from 'components/riakuto-chapter09/molecules/UseEffectSample';
 
 type Props = {
   limit: number;

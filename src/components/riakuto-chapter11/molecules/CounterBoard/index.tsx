@@ -1,5 +1,5 @@
 import { VFC } from 'react';
-import Card001 from 'components/common/molecules-and-atoms/Card001';
+import Card001 from 'components/common/molecules/Card001';
 
 type Props = {
   count?: number;
