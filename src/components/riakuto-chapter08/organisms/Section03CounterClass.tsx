@@ -1,5 +1,5 @@
 import { Component, ReactElement } from 'react';
-import BasicOrganism001 from 'components/common/organisms/BasicOrganism001';
+import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import ConterClass from 'components/riakuto-chapter08/molecules/CounterClass';
 
 type State = { count: number };
@@ -21,9 +21,9 @@ class Section03CounterClass extends Component<unknown, State> {
 
   render(): ReactElement {
     return (
-      <BasicOrganism001 sectionHeadingText="8-3. クラスコンポーネントで学ぶState-Counter">
+      <OrganismFrame001 sectionHeadingText="8-3. クラスコンポーネントで学ぶState-Counter">
         <ConterClass />
-      </BasicOrganism001>
+      </OrganismFrame001>
     );
   }
 }

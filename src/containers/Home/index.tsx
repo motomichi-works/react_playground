@@ -1,10 +1,10 @@
-import NavContainer from 'containers/Home/organisms/NavContainer';
+import Nav from 'components/Home/organisms/Nav';
 import Template001 from 'components/common/templates/Template001';
 
-const RootPage: React.VFC = () => (
+const Home: React.VFC = () => (
   <Template001 pageHeadingText="トップページ">
-    <NavContainer />
+    <Nav />
   </Template001>
 );
 
-export default RootPage;
+export default Home;

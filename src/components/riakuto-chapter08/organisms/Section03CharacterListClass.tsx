@@ -1,5 +1,5 @@
 import { Component, ReactElement } from 'react';
-import BasicOrganism001 from 'components/common/organisms/BasicOrganism001';
+import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import CharacterListClass, {
   Character,
 } from 'components/riakuto-chapter08/molecules/CharacterListClass';
@@ -39,9 +39,9 @@ class Section03CharacterListClass extends Component {
 
   render(): ReactElement {
     return (
-      <BasicOrganism001 sectionHeadingText="8-3. クラスコンポーネントで学ぶState-CharacterList">
+      <OrganismFrame001 sectionHeadingText="8-3. クラスコンポーネントで学ぶState-CharacterList">
         <CharacterListClass school="湘北高校" characters={this.characters} />
-      </BasicOrganism001>
+      </OrganismFrame001>
     );
   }
 }

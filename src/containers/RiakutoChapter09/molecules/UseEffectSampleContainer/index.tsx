@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
-import BasicOrganism001 from 'components/common/organisms/BasicOrganism001';
-import UseEffectSample from 'components/riakuto-chapter09/molecules/UseEffectSample';
+import Card001 from 'components/common/molecules/Card001';
 
 type Props = {
   limit: number;
 };
 
-const Section03UseEffect: React.VFC<Props> = ({ limit }) => {
+const UseEffectSampleContainer: React.VFC<Props> = ({ limit }) => {
   const [timeLeft, setTimeLeft] = useState(limit);
   const reset = (): void => setTimeLeft(limit);
   const tick = (): void => setTimeLeft((t) => t - 1);
@@ -23,11 +22,14 @@ const Section03UseEffect: React.VFC<Props> = ({ limit }) => {
     if (timeLeft === 0) setTimeLeft(limit);
   });
 
-  return (
-    <BasicOrganism001 sectionHeadingText="9-3. Hooksで副作用を扱う">
-      <UseEffectSample timeLeft={timeLeft} reset={reset} />
-    </BasicOrganism001>
-  );
+  const buttons = [
+    {
+      label: 'reset',
+      handleClick: reset,
+    },
+  ];
+
+  return <Card001 count={timeLeft} buttons={buttons} />;
 };
 
-export default Section03UseEffect;
+export default UseEffectSampleContainer;

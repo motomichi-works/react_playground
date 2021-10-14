@@ -1,25 +1,9 @@
-import Card001 from 'components/common/molecules/Card001';
+import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
+import MemoizeSampleContainer from 'containers/RiakutoChapter09/molecules/MemoizeSampleContainer';
 import Frame001 from 'components/common/molecules/Frame001';
 import List001, { Items } from 'components/common/molecules/List001';
 
-type Props = {
-  timeLeft: number;
-  reset: () => void;
-  primes: number[];
-};
-
-const MemoizeSample: React.VFC<Props> = ({ timeLeft, reset, primes }) => {
-  const buttons = [
-    {
-      label: 'reset',
-      handleClick: reset,
-    },
-  ];
-
-  const modifierClassNames: 'm_EmpasisColor'[] = primes.includes(timeLeft)
-    ? ['m_EmpasisColor']
-    : [];
-
+const Section04Memoize: React.VFC = () => {
   const items: Items = [
     [{ tagName: 'div', content: 'useMemo()で値をメモ化できる。' }],
     [{ tagName: 'div', content: 'useCallback()で関数をメモ化できる。' }],
@@ -38,19 +22,15 @@ const MemoizeSample: React.VFC<Props> = ({ timeLeft, reset, primes }) => {
   ];
 
   return (
-    <>
+    <OrganismFrame001 sectionHeadingText="9-4. Hooksにおけるメモ化を理解する">
       <Frame001 headingText="タイマー">
-        <Card001
-          count={timeLeft}
-          buttons={buttons}
-          modifierClassNames={modifierClassNames}
-        />
+        <MemoizeSampleContainer limit={60} />
       </Frame001>
       <Frame001 headingText="この節で学んだポイント">
         <List001 items={items} />
       </Frame001>
-    </>
+    </OrganismFrame001>
   );
 };
 
-export default MemoizeSample;
+export default Section04Memoize;

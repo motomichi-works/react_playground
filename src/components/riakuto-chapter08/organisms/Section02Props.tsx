@@ -1,4 +1,4 @@
-import BasicOrganism001 from 'components/common/organisms/BasicOrganism001';
+import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import CharacterList, {
   Character,
 } from 'components/riakuto-chapter08/molecules/CharacterList';
@@ -37,9 +37,9 @@ const Section02Props: React.VFC = () => {
   ];
 
   return (
-    <BasicOrganism001 sectionHeadingText="8-2. コンポーネントとProps">
+    <OrganismFrame001 sectionHeadingText="8-2. コンポーネントとProps">
       <CharacterList school="湘北高校" characters={characters} />
-    </BasicOrganism001>
+    </OrganismFrame001>
   );
 };
 

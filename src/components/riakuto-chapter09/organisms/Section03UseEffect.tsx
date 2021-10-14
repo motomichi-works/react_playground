@@ -1,20 +1,9 @@
-import Card001 from 'components/common/molecules/Card001';
+import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
+import UseEffectSampleContainer from 'containers/RiakutoChapter09/molecules/UseEffectSampleContainer';
 import Frame001 from 'components/common/molecules/Frame001';
 import List001, { Items } from 'components/common/molecules/List001';
 
-type Props = {
-  timeLeft: number;
-  reset: () => void;
-};
-
-const UseEffectSample: React.VFC<Props> = ({ timeLeft, reset }) => {
-  const buttons = [
-    {
-      label: 'reset',
-      handleClick: reset,
-    },
-  ];
-
+const Section03UseEffect: React.VFC = () => {
   const items: Items = [
     [
       {
@@ -26,15 +15,15 @@ const UseEffectSample: React.VFC<Props> = ({ timeLeft, reset }) => {
   ];
 
   return (
-    <>
+    <OrganismFrame001 sectionHeadingText="9-3. Hooksで副作用を扱う">
       <Frame001 headingText="タイマー">
-        <Card001 count={timeLeft} buttons={buttons} />
+        <UseEffectSampleContainer limit={60} />
       </Frame001>
       <Frame001 headingText="この節で学んだポイント">
         <List001 items={items} />
       </Frame001>
-    </>
+    </OrganismFrame001>
   );
 };
 
-export default UseEffectSample;
+export default Section03UseEffect;

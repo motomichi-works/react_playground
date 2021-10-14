@@ -1,25 +1,9 @@
-import Card001 from 'components/common/molecules/Card001';
+import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
+import UseStateSampleContainer from 'containers/RiakutoChapter09/molecules/UseStateSampleContainer';
 import Frame001 from 'components/common/molecules/Frame001';
 import List001, { Items } from 'components/common/molecules/List001';
 
-type Props = {
-  count: number;
-  increment: () => void;
-  reset: () => void;
-};
-
-const UseStateSample: React.VFC<Props> = ({ count, increment, reset }) => {
-  const buttons = [
-    {
-      label: 'reset',
-      handleClick: reset,
-    },
-    {
-      label: '+1',
-      handleClick: increment,
-    },
-  ];
-
+const Section02UseState: React.VFC = () => {
   const items: Items = [
     [
       {
@@ -30,15 +14,15 @@ const UseStateSample: React.VFC<Props> = ({ count, increment, reset }) => {
   ];
 
   return (
-    <>
+    <OrganismFrame001 sectionHeadingText="9-2. Hooksでstateを扱う">
       <Frame001 headingText="カウンター">
-        <Card001 count={count} buttons={buttons} />
+        <UseStateSampleContainer />
       </Frame001>
       <Frame001 headingText="この節で学んだポイント">
         <List001 items={items} />
       </Frame001>
-    </>
+    </OrganismFrame001>
   );
 };
 
-export default UseStateSample;
+export default Section02UseState;

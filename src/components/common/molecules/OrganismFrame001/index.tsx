@@ -5,11 +5,11 @@ type Props = {
   sectionHeadingText: string;
 };
 
-const BasicOrganism001: React.FC<Props> = ({
+const OrganismFrame001: React.FC<Props> = ({
   children,
   sectionHeadingText,
 }) => (
-  <section className={styles.BasicOrganism001}>
+  <section className={styles.OrganismFrame001}>
     <div className={styles.HeadingWrapper}>
       <Heading001 text={sectionHeadingText} />
     </div>
@@ -17,4 +17,4 @@ const BasicOrganism001: React.FC<Props> = ({
   </section>
 );
 
-export default BasicOrganism001;
+export default OrganismFrame001;

@@ -1,6 +1,6 @@
-import Section02Props from 'containers/RiakutoChapter08/organisms/Section02Props';
-import Section03CharacterListClass from 'containers/RiakutoChapter08/organisms/Section03CharacterListClass';
-import Section03CounterClass from 'containers/RiakutoChapter08/organisms/Section03CounterClass';
+import Section02Props from 'components/riakuto-chapter08/organisms/Section02Props';
+import Section03CharacterListClass from 'components/riakuto-chapter08/organisms/Section03CharacterListClass';
+import Section03CounterClass from 'components/riakuto-chapter08/organisms/Section03CounterClass';
 import Template001 from 'components/common/templates/Template001';
 
 const RiakutoChapter08: React.VFC = () => (

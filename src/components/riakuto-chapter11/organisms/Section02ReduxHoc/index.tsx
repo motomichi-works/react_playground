@@ -1,4 +1,4 @@
-import BasicOrganism001 from 'components/common/organisms/BasicOrganism001';
+import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import ColorfulBeadsContainer from 'containers/RiakutoChapter11/molecules/ColorfulBeadsContainer';
 import CounterBoardHocContainer from 'containers/RiakutoChapter11/molecules/CounterBoardHocContainer';
 import Frame001 from 'components/common/molecules/Frame001';
@@ -35,7 +35,7 @@ const Section02HocRedux: React.VFC = () => {
   ];
 
   return (
-    <BasicOrganism001 sectionHeadingText="11-2. Reduxの使い方(HOC)">
+    <OrganismFrame001 sectionHeadingText="11-2. Reduxの使い方(HOC)">
       <Frame001 headingText="ビーズカウンター">
         <CounterBoardHocContainer />
         <ColorfulBeadsContainer />
@@ -43,7 +43,7 @@ const Section02HocRedux: React.VFC = () => {
       <Frame001 headingText="この節で学んだポイント">
         <List001 items={items} />
       </Frame001>
-    </BasicOrganism001>
+    </OrganismFrame001>
   );
 };
 

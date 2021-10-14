@@ -12,7 +12,7 @@ type Props = {
 const List001: React.FC<Props> = ({ items }) => (
   <ul className={styles.List001}>
     {items.map((ItemInnerElements) => (
-      <li className={styles.Item}>
+      <li className={styles.Item} key={JSON.stringify(ItemInnerElements)}>
         {ItemInnerElements.map((element) => (
           <element.tagName>{element.content}</element.tagName>
         ))}

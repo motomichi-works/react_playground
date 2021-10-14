@@ -1,13 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import BasicOrganism001 from 'components/common/organisms/BasicOrganism001';
-import MemoizeSample from 'components/riakuto-chapter09/molecules/MemoizeSample';
 import { getPrimes } from 'utils/math-tool';
+import Card001 from 'components/common/molecules/Card001';
 
 type Props = {
   limit: number;
 };
 
-const Section04Memoize: React.VFC<Props> = ({ limit }) => {
+const MemoizeSampleContainer: React.VFC<Props> = ({ limit }) => {
   const [timeLeft, setTimeLeft] = useState(limit);
 
   // useMemoを使うことによって、limitが変化したときだけ`() => getPrimes(limit)`が実行されるようにしています。
@@ -44,11 +43,24 @@ const Section04Memoize: React.VFC<Props> = ({ limit }) => {
     if (timeLeft === 0) reset();
   }, [timeLeft, reset]);
 
+  const buttons = [
+    {
+      label: 'reset',
+      handleClick: reset,
+    },
+  ];
+
+  const modifierClassNames: 'm_EmpasisColor'[] = primes.includes(timeLeft)
+    ? ['m_EmpasisColor']
+    : [];
+
   return (
-    <BasicOrganism001 sectionHeadingText="9-4. Hooksにおけるメモ化を理解する">
-      <MemoizeSample timeLeft={timeLeft} reset={reset} primes={primes} />
-    </BasicOrganism001>
+    <Card001
+      count={timeLeft}
+      buttons={buttons}
+      modifierClassNames={modifierClassNames}
+    />
   );
 };
 
-export default Section04Memoize;
+export default MemoizeSampleContainer;
