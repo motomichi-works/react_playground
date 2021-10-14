@@ -58,6 +58,22 @@ input[type='submit'] {
   }
 }
 
+code {
+  padding: 1px 6px;
+  color: #e02c2c;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+pre {
+  padding: 1px 6px;
+  color: #e02c2c;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
 ul {
   list-style: none;
 }

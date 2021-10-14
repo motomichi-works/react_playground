@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
 
 export type Items = {
-  tagName: 'div' | 'span';
+  tagName: 'div' | 'span' | `code` | 'pre';
   content: string;
 }[][];
 

@@ -12,4 +12,7 @@
     left: 0;
     content: '・';
   }
+
+  code + span { margin-left: 4px; }
+  span + code { margin-left: 4px; }
 }
