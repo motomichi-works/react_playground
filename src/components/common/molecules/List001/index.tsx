@@ -1,21 +1,16 @@
 import styles from './index.module.scss';
 
-export type Items = {
-  tagName: 'div' | 'span' | `code` | 'pre';
-  content: string;
-}[][];
+export type Items = string[];
 
 type Props = {
   items: Items;
 };
 
 const List001: React.FC<Props> = ({ items }) => (
-  <ul className={styles.List001}>
-    {items.map((ItemInnerElements) => (
-      <li className={styles.Item} key={JSON.stringify(ItemInnerElements)}>
-        {ItemInnerElements.map((element) => (
-          <element.tagName>{element.content}</element.tagName>
-        ))}
+  <ul className={styles.List001} data-adjacent-id="List001">
+    {items.map((item, i) => (
+      <li className={styles.Item} key={`${JSON.stringify(item)}${String(i)}`}>
+        {item}
       </li>
     ))}
   </ul>

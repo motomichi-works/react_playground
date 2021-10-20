@@ -1,7 +1,7 @@
 import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import CustomHookSampleContainer from 'containers/RiakutoChapter09/molecules/CustomHookSampleContainer';
 import Frame001 from 'components/common/molecules/Frame001';
-import List001, { Items } from 'components/common/molecules/List001';
+import List002, { Items } from 'components/common/molecules/List002';
 
 const Section05CustomHook: React.VFC = () => {
   const items: Items = [
@@ -19,7 +19,7 @@ const Section05CustomHook: React.VFC = () => {
         <CustomHookSampleContainer limit={60} />
       </Frame001>
       <Frame001 headingText="この節で学んだポイント">
-        <List001 items={items} />
+        <List002 items={items} />
       </Frame001>
     </OrganismFrame001>
   );

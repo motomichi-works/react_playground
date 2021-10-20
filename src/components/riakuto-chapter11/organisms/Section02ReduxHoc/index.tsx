@@ -2,7 +2,7 @@ import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import ColorfulBeadsContainer from 'containers/RiakutoChapter11/molecules/ColorfulBeadsContainer';
 import CounterBoardHocContainer from 'containers/RiakutoChapter11/molecules/CounterBoardHocContainer';
 import Frame001 from 'components/common/molecules/Frame001';
-import List001, { Items } from 'components/common/molecules/List001';
+import List002, { Items } from 'components/common/molecules/List002';
 
 const Section02HocRedux: React.VFC = () => {
   const items: Items = [
@@ -41,7 +41,7 @@ const Section02HocRedux: React.VFC = () => {
         <ColorfulBeadsContainer />
       </Frame001>
       <Frame001 headingText="この節で学んだポイント">
-        <List001 items={items} />
+        <List002 items={items} />
       </Frame001>
     </OrganismFrame001>
   );
