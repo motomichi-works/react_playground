@@ -4,7 +4,7 @@ import CounterBoardHocContainer from 'containers/RiakutoChapter11/molecules/Coun
 import Frame001 from 'components/common/molecules/Frame001';
 import List002, { Items } from 'components/common/molecules/List002';
 
-const Section02HocRedux: React.VFC = () => {
+const Section02ReduxHoc: React.VFC = () => {
   const items: Items = [
     [
       {
@@ -29,7 +29,14 @@ const Section02HocRedux: React.VFC = () => {
       {
         tagName: 'div',
         content:
-          'サンプルコードは src/containers/RiakutoChapter11/molecules/CounterBoardHocContainer.tsx を参照。',
+          'storeを定義している箇所のサンプルコードは src/stores/riakuto-chapter11-section02/* を参照。',
+      },
+    ],
+    [
+      {
+        tagName: 'div',
+        content:
+          'storeを使用している箇所のサンプルコードは src/containers/RiakutoChapter11/molecules/CounterBoardHocContainer.tsx を参照。',
       },
     ],
   ];
@@ -47,4 +54,4 @@ const Section02HocRedux: React.VFC = () => {
   );
 };
 
-export default Section02HocRedux;
+export default Section02ReduxHoc;
