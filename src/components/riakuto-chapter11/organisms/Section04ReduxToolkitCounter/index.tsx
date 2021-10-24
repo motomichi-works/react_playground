@@ -87,7 +87,7 @@ const Section04ReduxToolkitCounter: React.VFC = () => {
   ];
 
   return (
-    <OrganismFrame001 sectionHeadingText="11-4. ReduxToolkitを使って楽をしよう(counter)">
+    <OrganismFrame001 sectionHeadingText="11-4. ReduxToolkitを使って楽をしよう(Counter)">
       <Frame001 headingText="ビーズカウンター">
         <CounterBoardToolkitContainer />
         <ColorfulBeadsContainer />
