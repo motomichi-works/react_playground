@@ -1,7 +1,7 @@
 import { VFC } from 'react';
 import Card001 from 'components/common/molecules/Card001';
 
-type Props = {
+export type Props = {
   count?: number;
   addBulkUnit?: () => void;
   decrement?: () => void;
