@@ -9,7 +9,7 @@ const OrganismFrame001: React.FC<Props> = ({
   children,
   sectionHeadingText,
 }) => (
-  <section className={styles.OrganismFrame001}>
+  <section className={[styles.OrganismFrame001, 'OrganismFrame001'].join(' ')}>
     <div className={styles.HeadingWrapper}>
       <Heading001 text={sectionHeadingText} />
     </div>

@@ -14,7 +14,9 @@
   }
 
   code + span { margin-left: 4px; }
+  code + a { margin-left: 4px; }
   span + code { margin-left: 4px; }
+  a + code { margin-left: 4px; }
 }
 
 // 隣接要素セレクタによるマージン
