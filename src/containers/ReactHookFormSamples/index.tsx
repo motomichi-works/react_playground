@@ -1,6 +1,7 @@
 import ReactHookFormSample01Container from 'containers/ReactHookFormSamples/organisms/ReactHookFormSample01Container';
 import ReactHookFormSample02Container from 'containers/ReactHookFormSamples/organisms/ReactHookFormSample02Container';
 import ReactHookFormSample03Container from 'containers/ReactHookFormSamples/organisms/ReactHookFormSample03Container';
+import ReactHookFormSample04Container from 'containers/ReactHookFormSamples/organisms/ReactHookFormSample04Container';
 import Template001 from 'components/common/templates/Template001';
 
 const ReactHookFormSample01: React.VFC = () => (
@@ -8,6 +9,7 @@ const ReactHookFormSample01: React.VFC = () => (
     <ReactHookFormSample01Container />
     <ReactHookFormSample02Container />
     <ReactHookFormSample03Container />
+    <ReactHookFormSample04Container />
   </Template001>
 );
 
