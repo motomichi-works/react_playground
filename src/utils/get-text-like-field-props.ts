@@ -2,10 +2,11 @@ import { Path, UseFormRegister } from 'react-hook-form';
 import { TextLikeFieldProps } from 'components/common/molecules/TextLikeField001';
 
 function getTextLikeFieldProps<T>(
-  name: Path<T>,
+  name: string,
   register: UseFormRegister<T>,
 ): TextLikeFieldProps {
-  const registerReturn = { ...register(name) };
+  const path = name as Path<T>;
+  const registerReturn = { ...register(path) };
 
   return {
     handleBlur: ({ target, type }) => {
