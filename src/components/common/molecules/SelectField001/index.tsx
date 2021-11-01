@@ -1,5 +1,5 @@
-import React from 'react';
-import { RefCallBack, ChangeHandler } from 'react-hook-form';
+import React, { FocusEvent, ChangeEvent } from 'react';
+import { RefCallBack } from 'react-hook-form';
 import styles from './index.module.scss';
 
 type Choice = {
@@ -8,8 +8,8 @@ type Choice = {
 };
 
 type SelectFieldProps = {
-  onBlur: ChangeHandler;
-  onChange: ChangeHandler;
+  handleBlur: ({ target, type }: FocusEvent<HTMLSelectElement>) => void;
+  handleChange: ({ target, type }: ChangeEvent<HTMLSelectElement>) => void;
   name?: string;
   ref: RefCallBack;
   choices: Choice[];
@@ -17,35 +17,7 @@ type SelectFieldProps = {
 
 const SelectField001 = React.forwardRef<HTMLSelectElement, SelectFieldProps>(
   (props, ref) => {
-    const { name = '', choices, onBlur, onChange } = props;
-
-    const handleBlur = ({
-      target,
-      type,
-    }: {
-      target: HTMLSelectElement;
-      type: string;
-    }) => {
-      console.log('handleBlur');
-      console.log(target);
-      console.log(type);
-
-      void onBlur({ target, type });
-    };
-
-    const handleChange = ({
-      target,
-      type,
-    }: {
-      target: HTMLSelectElement;
-      type: string;
-    }) => {
-      console.log('handleChange');
-      console.log(target);
-      console.log(type);
-
-      void onChange({ target, type });
-    };
+    const { name = '', choices, handleBlur, handleChange } = props;
 
     return (
       <div className={styles.SelectField001}>

@@ -3,6 +3,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import validationSchema, {
   IFormValues,
 } from 'containers/ReactHookFormSamples/validation-schema';
+import getTextLikeFieldBasicProps from 'utils/get-text-like-field-basic-props';
+import getSelectFieldBasicProps from 'utils/get-select-field-basic-props';
 
 // import useMyForm from 'containers/ReactHookFormSamples/use-my-form';
 import ReactHookFormSample04 from 'components/react-hook-form-samples/organisms/ReactHookFormSample04';
@@ -23,9 +25,21 @@ const ReactHookFormSample04Container: React.VFC = () => {
     console.log(data);
   };
 
+  const firstNameFieldProps = getTextLikeFieldBasicProps({
+    ...register('firstName'),
+  });
+  const ageFieldProps = getSelectFieldBasicProps({
+    ...register('age'),
+  });
+
+  const fieldProps = {
+    firstName: firstNameFieldProps,
+    age: ageFieldProps,
+  };
+
   return (
     <form className="u-MT64" onSubmit={handleSubmit(onSubmit)}>
-      <ReactHookFormSample04 register={register} errors={errors} />
+      <ReactHookFormSample04 errors={errors} fieldProps={fieldProps} />
     </form>
   );
 };

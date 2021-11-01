@@ -1,10 +1,14 @@
-import React, { CompositionEvent } from 'react';
-import { RefCallBack, ChangeHandler } from 'react-hook-form';
+import React, { CompositionEvent, FocusEvent, ChangeEvent } from 'react';
+import { RefCallBack } from 'react-hook-form';
 import styles from './index.module.scss';
 
 type TextLikeFieldProps = {
-  onBlur: ChangeHandler;
-  onChange: ChangeHandler;
+  handleBlur: ({ target, type }: FocusEvent<HTMLInputElement>) => void;
+  handleChange: ({ target, type }: ChangeEvent<HTMLInputElement>) => void;
+  handleComposition: ({
+    target,
+    type,
+  }: CompositionEvent<HTMLInputElement>) => void;
   name?: string;
   ref: RefCallBack;
   typeProperty?: 'text' | 'tel';
@@ -12,46 +16,13 @@ type TextLikeFieldProps = {
 
 const TextLikeField001 = React.forwardRef<HTMLInputElement, TextLikeFieldProps>(
   (props, ref) => {
-    const { typeProperty = 'text', name = '', onBlur, onChange } = props;
-
-    const handleBlur = ({
-      target,
-      type,
-    }: {
-      target: HTMLInputElement;
-      type: string;
-    }) => {
-      console.log('handleBlur');
-      console.log(target);
-      console.log(type);
-
-      void onBlur({ target, type });
-    };
-
-    const handleChange = ({
-      target,
-      type,
-    }: {
-      target: HTMLInputElement;
-      type: string;
-    }) => {
-      console.log('handleChange');
-      console.log(target);
-      console.log(type);
-
-      void onChange({ target, type });
-    };
-
-    const handleComposition = ({
-      target,
-      type,
-    }: CompositionEvent<HTMLInputElement>) => {
-      console.log('handleComposition');
-      console.log(target);
-      console.log(type);
-
-      void onChange({ target, type });
-    };
+    const {
+      handleBlur,
+      handleChange,
+      handleComposition,
+      name = '',
+      typeProperty = 'text',
+    } = props;
 
     return (
       <div className={styles.TextLikeField001}>

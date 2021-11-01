@@ -1,18 +1,23 @@
 import React from 'react';
-import { FieldErrors, UseFormRegister } from 'react-hook-form';
+import { FieldErrors } from 'react-hook-form';
 import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import Frame001 from 'components/common/molecules/Frame001';
 import List002, { Items } from 'components/common/molecules/List002';
 import TextLikeField001 from 'components/common/molecules/TextLikeField001';
 import SelectField001 from 'components/common/molecules/SelectField001';
 import { IFormValues } from 'containers/ReactHookFormSamples/validation-schema';
+import { TextLikeFieldBasicProps } from 'utils/get-text-like-field-basic-props';
+import { SelectFieldBasicProps } from 'utils/get-select-field-basic-props';
 
 type Props = {
   errors: FieldErrors<IFormValues>;
-  register: UseFormRegister<IFormValues>;
+  fieldProps: {
+    firstName: TextLikeFieldBasicProps;
+    age: SelectFieldBasicProps;
+  };
 };
 
-const ReactHookFormSample04: React.VFC<Props> = ({ errors, register }) => {
+const ReactHookFormSample04: React.VFC<Props> = ({ errors, fieldProps }) => {
   const items: Items = [
     [
       {
@@ -35,13 +40,13 @@ const ReactHookFormSample04: React.VFC<Props> = ({ errors, register }) => {
     <OrganismFrame001 sectionHeadingText="業務を想定して設計する">
       <Frame001 headingText="Demo">
         {/* eslint-disable */}
-        <TextLikeField001 {...register('firstName')} />
+        <TextLikeField001 {...fieldProps.firstName} />
         <p>{errors.firstName?.message}</p>
         {/* eslint-enable */}
 
         {/* eslint-disable */}
         <SelectField001
-          {...register('age')}
+          {...fieldProps.age}
           choices={[
             { label: '選択してください', value: '' },
             { label: 'Selectタグ選択肢1', value: 'selectTagChoice1' },
