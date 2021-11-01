@@ -8,8 +8,7 @@ const validationSchema = yup
   .required();
 
 export default validationSchema;
-
-export interface IFormValues {
-  firstName: string;
-  age: string;
-}
+export const fieldNamesArray = ['firstName', 'age'] as const;
+export type FieldNamesArray = typeof fieldNamesArray;
+export type FieldNameStrings = FieldNamesArray[number];
+export type IFormValues = Record<FieldNameStrings, string>;

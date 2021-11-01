@@ -1,17 +1,13 @@
 import React from 'react';
-import { ChangeHandler, RefCallBack } from 'react-hook-form';
+import { ChangeHandler } from 'react-hook-form';
 
 // eslint-disable-next-line
 const getTextLikeFieldBasicProps = ({
   onBlur,
   onChange,
-  ref,
-  name,
 }: {
   onBlur: ChangeHandler;
   onChange: ChangeHandler;
-  ref: RefCallBack;
-  name: string;
 }) => {
   const handleBlur = ({ target, type }: React.FocusEvent<HTMLInputElement>) => {
     console.log('handleBlur');
@@ -41,8 +37,6 @@ const getTextLikeFieldBasicProps = ({
     handleBlur,
     handleChange,
     handleComposition,
-    ref,
-    name,
   };
 };
 

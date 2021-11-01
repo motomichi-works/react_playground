@@ -3,8 +3,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import validationSchema, {
   IFormValues,
 } from 'containers/ReactHookFormSamples/validation-schema';
-import getTextLikeFieldBasicProps from 'utils/get-text-like-field-basic-props';
 import getSelectFieldBasicProps from 'utils/get-select-field-basic-props';
+import useTextLikeField from 'hooks/use-text-like-field';
 
 // import useMyForm from 'containers/ReactHookFormSamples/use-my-form';
 import ReactHookFormSample04 from 'components/react-hook-form-samples/organisms/ReactHookFormSample04';
@@ -12,6 +12,7 @@ import ReactHookFormSample04 from 'components/react-hook-form-samples/organisms/
 const ReactHookFormSample04Container: React.VFC = () => {
   const {
     register,
+    setValue,
     handleSubmit,
     formState: { errors },
   } = useForm<IFormValues>({
@@ -25,16 +26,23 @@ const ReactHookFormSample04Container: React.VFC = () => {
     console.log(data);
   };
 
-  const firstNameFieldProps = getTextLikeFieldBasicProps({
-    ...register('firstName'),
+  const firstNameFieldProps = useTextLikeField<IFormValues>({
+    nameProperty: 'firstName',
+    defaultValue: '',
+    register,
+    setValue,
+    staticOptions: {},
   });
-  const ageFieldProps = getSelectFieldBasicProps({
+
+  const ageFieldBasicProps = getSelectFieldBasicProps({
     ...register('age'),
   });
 
   const fieldProps = {
     firstName: firstNameFieldProps,
-    age: ageFieldProps,
+    age: {
+      ...ageFieldBasicProps,
+    },
   };
 
   return (

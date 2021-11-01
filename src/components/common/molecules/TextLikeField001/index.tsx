@@ -1,17 +1,26 @@
-import React, { CompositionEvent, FocusEvent, ChangeEvent } from 'react';
+import React, { CompositionEvent } from 'react';
 import { RefCallBack } from 'react-hook-form';
 import styles from './index.module.scss';
 
-type TextLikeFieldProps = {
-  handleBlur: ({ target, type }: FocusEvent<HTMLInputElement>) => void;
-  handleChange: ({ target, type }: ChangeEvent<HTMLInputElement>) => void;
+type EventHandler = ({
+  target,
+  type,
+}: {
+  target: HTMLInputElement;
+  type: string;
+}) => void;
+
+export type TextLikeFieldProps = {
+  handleBlur: EventHandler;
+  handleChange: EventHandler;
   handleComposition: ({
     target,
     type,
   }: CompositionEvent<HTMLInputElement>) => void;
-  name?: string;
+  name: string;
   ref: RefCallBack;
   typeProperty?: 'text' | 'tel';
+  placeholder?: string;
 };
 
 const TextLikeField001 = React.forwardRef<HTMLInputElement, TextLikeFieldProps>(
@@ -20,7 +29,7 @@ const TextLikeField001 = React.forwardRef<HTMLInputElement, TextLikeFieldProps>(
       handleBlur,
       handleChange,
       handleComposition,
-      name = '',
+      name,
       typeProperty = 'text',
     } = props;
 

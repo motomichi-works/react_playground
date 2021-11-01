@@ -1,18 +1,18 @@
-import React from 'react';
 import { FieldErrors } from 'react-hook-form';
 import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import Frame001 from 'components/common/molecules/Frame001';
 import List002, { Items } from 'components/common/molecules/List002';
-import TextLikeField001 from 'components/common/molecules/TextLikeField001';
+import TextLikeField001, {
+  TextLikeFieldProps,
+} from 'components/common/molecules/TextLikeField001';
 import SelectField001 from 'components/common/molecules/SelectField001';
 import { IFormValues } from 'containers/ReactHookFormSamples/validation-schema';
-import { TextLikeFieldBasicProps } from 'utils/get-text-like-field-basic-props';
 import { SelectFieldBasicProps } from 'utils/get-select-field-basic-props';
 
 type Props = {
   errors: FieldErrors<IFormValues>;
   fieldProps: {
-    firstName: TextLikeFieldBasicProps;
+    firstName: TextLikeFieldProps;
     age: SelectFieldBasicProps;
   };
 };
