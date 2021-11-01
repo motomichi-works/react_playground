@@ -1,17 +1,51 @@
 import React from 'react';
-import { RefCallBack } from 'react-hook-form';
+import { RefCallBack, ChangeHandler } from 'react-hook-form';
 import styles from './index.module.scss';
 
-export type SelectFieldProps = {
-  handleBlur: React.FocusEventHandler<HTMLSelectElement>;
-  handleChange: React.ChangeEventHandler<HTMLSelectElement>;
-  name: string;
+type Choice = {
+  label: string;
+  value: string;
+};
+
+type SelectFieldProps = {
+  onBlur: ChangeHandler;
+  onChange: ChangeHandler;
+  name?: string;
   ref: RefCallBack;
+  choices: Choice[];
 };
 
 const SelectField001 = React.forwardRef<HTMLSelectElement, SelectFieldProps>(
   (props, ref) => {
-    const { handleBlur, handleChange, name } = props;
+    const { name = '', choices, onBlur, onChange } = props;
+
+    const handleBlur = ({
+      target,
+      type,
+    }: {
+      target: HTMLSelectElement;
+      type: string;
+    }) => {
+      console.log('handleBlur');
+      console.log(target);
+      console.log(type);
+
+      void onBlur({ target, type });
+    };
+
+    const handleChange = ({
+      target,
+      type,
+    }: {
+      target: HTMLSelectElement;
+      type: string;
+    }) => {
+      console.log('handleChange');
+      console.log(target);
+      console.log(type);
+
+      void onChange({ target, type });
+    };
 
     return (
       <div className={styles.SelectField001}>
@@ -22,8 +56,11 @@ const SelectField001 = React.forwardRef<HTMLSelectElement, SelectFieldProps>(
           onBlur={handleBlur}
           onChange={handleChange}
         >
-          <option value="20">20</option>
-          <option value="30">30</option>
+          {choices.map((choice) => (
+            <option key={choice.value} value={choice.value}>
+              {choice.label}
+            </option>
+          ))}
         </select>
       </div>
     );

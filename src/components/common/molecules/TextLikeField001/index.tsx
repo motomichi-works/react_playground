@@ -2,7 +2,7 @@ import React, { CompositionEvent } from 'react';
 import { RefCallBack, ChangeHandler } from 'react-hook-form';
 import styles from './index.module.scss';
 
-export type TextLikeFieldProps = {
+type TextLikeFieldProps = {
   onBlur: ChangeHandler;
   onChange: ChangeHandler;
   name?: string;

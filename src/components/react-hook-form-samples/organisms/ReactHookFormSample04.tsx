@@ -4,6 +4,7 @@ import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import Frame001 from 'components/common/molecules/Frame001';
 import List002, { Items } from 'components/common/molecules/List002';
 import TextLikeField001 from 'components/common/molecules/TextLikeField001';
+import SelectField001 from 'components/common/molecules/SelectField001';
 import { IFormValues } from 'containers/ReactHookFormSamples/validation-schema';
 
 type Props = {
@@ -33,13 +34,22 @@ const ReactHookFormSample04: React.VFC<Props> = ({ errors, register }) => {
   return (
     <OrganismFrame001 sectionHeadingText="業務を想定して設計する">
       <Frame001 headingText="Demo">
-        {/* eslint-disable-next-line */}
+        {/* eslint-disable */}
         <TextLikeField001 {...register('firstName')} />
         <p>{errors.firstName?.message}</p>
+        {/* eslint-enable */}
 
-        {/* eslint-disable-next-line */}
-        <TextLikeField001 {...register('age')} />
+        {/* eslint-disable */}
+        <SelectField001
+          {...register('age')}
+          choices={[
+            { label: '選択してください', value: '' },
+            { label: 'Selectタグ選択肢1', value: 'selectTagChoice1' },
+            { label: 'Selectタグ選択肢2', value: 'selectTagChoice2' },
+          ]}
+        />
         <p>{errors.age?.message}</p>
+        {/* eslint-enable */}
 
         <input type="submit" />
       </Frame001>
