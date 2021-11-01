@@ -1,22 +1,17 @@
 import React from 'react';
-import { FieldErrors } from 'react-hook-form';
+import { FieldErrors, UseFormRegister } from 'react-hook-form';
 import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import Frame001 from 'components/common/molecules/Frame001';
 import List002, { Items } from 'components/common/molecules/List002';
-import TextLikeField001, {
-  TextLikeFieldProps,
-} from 'components/common/molecules/TextLikeField001';
+import TextLikeField001 from 'components/common/molecules/TextLikeField001';
 import { IFormValues } from 'containers/ReactHookFormSamples/validation-schema';
 
 type Props = {
   errors: FieldErrors<IFormValues>;
-  fieldPropsObj: {
-    firstName: TextLikeFieldProps;
-    age: TextLikeFieldProps;
-  };
+  register: UseFormRegister<IFormValues>;
 };
 
-const ReactHookFormSample04: React.VFC<Props> = ({ errors, fieldPropsObj }) => {
+const ReactHookFormSample04: React.VFC<Props> = ({ errors, register }) => {
   const items: Items = [
     [
       {
@@ -39,11 +34,11 @@ const ReactHookFormSample04: React.VFC<Props> = ({ errors, fieldPropsObj }) => {
     <OrganismFrame001 sectionHeadingText="業務を想定して設計する">
       <Frame001 headingText="Demo">
         {/* eslint-disable-next-line */}
-        <TextLikeField001 {...fieldPropsObj.firstName} />
+        <TextLikeField001 {...register('firstName')} />
         <p>{errors.firstName?.message}</p>
 
         {/* eslint-disable-next-line */}
-        <TextLikeField001 {...fieldPropsObj.age} />
+        <TextLikeField001 {...register('age')} />
         <p>{errors.age?.message}</p>
 
         <input type="submit" />
