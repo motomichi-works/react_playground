@@ -13,6 +13,7 @@ import { IFormValues } from 'containers/ReactHookFormSamples/validation-schema';
 type Props = {
   errors: FieldErrors<IFormValues>;
   fieldProps: {
+    lastName: TextLikeFieldProps;
     firstName: TextLikeFieldProps;
     age: SelectFieldProps;
   };
@@ -40,6 +41,11 @@ const ReactHookFormSample04: React.VFC<Props> = ({ errors, fieldProps }) => {
   return (
     <OrganismFrame001 sectionHeadingText="業務を想定して設計する">
       <Frame001 headingText="Demo">
+        {/* eslint-disable */}
+        <TextLikeField001 {...fieldProps.lastName} />
+        <p>{errors.lastName?.message}</p>
+        {/* eslint-enable */}
+
         {/* eslint-disable */}
         <TextLikeField001 {...fieldProps.firstName} />
         <p>{errors.firstName?.message}</p>

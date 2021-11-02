@@ -2,13 +2,14 @@ import * as yup from 'yup';
 
 const validationSchema = yup
   .object({
-    firstName: yup.string().required(),
-    age: yup.string().required(),
+    lastName: yup.string().required('姓は必須です。'),
+    firstName: yup.string().required('名は必須です。'),
+    age: yup.string().required('年齢は必須です。'),
   })
   .required();
 
 export default validationSchema;
-export const fieldNamesArray = ['firstName', 'age'] as const;
+export const fieldNamesArray = ['firstName', 'lastName', 'age'] as const;
 export type FieldNamesArray = typeof fieldNamesArray;
 export type FieldNameStrings = FieldNamesArray[number];
 export type IFormValues = Record<FieldNameStrings, string>;

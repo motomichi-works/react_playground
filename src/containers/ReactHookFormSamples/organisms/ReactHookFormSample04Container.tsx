@@ -26,31 +26,34 @@ const ReactHookFormSample04Container: React.VFC = () => {
     console.log(data);
   };
 
-  const firstNameFieldProps = useTextLikeField<IFormValues>({
-    nameProperty: 'firstName',
-    defaultValue: '',
-    register,
-    setValue,
-    staticOptions: {},
-  });
-
-  const ageFieldProps = useSelectField<IFormValues>({
-    nameProperty: 'age',
-    defaultValue: '',
-    register,
-    setValue,
-    staticOptions: {
-      choices: [
-        { label: '選択してください', value: '' },
-        { label: 'Selectタグ選択肢1', value: 'selectTagChoice1' },
-        { label: 'Selectタグ選択肢2', value: 'selectTagChoice2' },
-      ],
-    },
-  });
-
   const fieldProps = {
-    firstName: firstNameFieldProps,
-    age: ageFieldProps,
+    lastName: useTextLikeField<IFormValues>({
+      nameProperty: 'lastName',
+      defaultValue: '',
+      register,
+      setValue,
+      staticOptions: {},
+    }),
+    firstName: useTextLikeField<IFormValues>({
+      nameProperty: 'firstName',
+      defaultValue: '',
+      register,
+      setValue,
+      staticOptions: {},
+    }),
+    age: useSelectField<IFormValues>({
+      nameProperty: 'age',
+      defaultValue: '',
+      register,
+      setValue,
+      staticOptions: {
+        choices: [
+          { label: '選択してください', value: '' },
+          { label: 'Selectタグ選択肢1', value: 'selectTagChoice1' },
+          { label: 'Selectタグ選択肢2', value: 'selectTagChoice2' },
+        ],
+      },
+    }),
   };
 
   return (
