@@ -10,7 +10,7 @@ const HiddenField001 = React.forwardRef<HTMLInputElement, HiddenFieldProps>(
   (props, ref) => {
     const { name } = props;
 
-    return <input type="hidden" name={name} ref={ref} />;
+    return <input type="text" name={name} ref={ref} />;
   },
 );
 

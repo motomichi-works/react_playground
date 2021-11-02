@@ -2,6 +2,9 @@ import { FieldErrors } from 'react-hook-form';
 import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import Frame001 from 'components/common/molecules/Frame001';
 import List002, { Items } from 'components/common/molecules/List002';
+import HiddenField001, {
+  HiddenFieldProps,
+} from 'components/common/molecules/HiddenField001';
 import TextLikeField001, {
   TextLikeFieldProps,
 } from 'components/common/molecules/TextLikeField001';
@@ -15,6 +18,7 @@ type Props = {
   fieldProps: {
     lastName: TextLikeFieldProps;
     firstName: TextLikeFieldProps;
+    fullName: HiddenFieldProps;
     age: SelectFieldProps;
   };
 };
@@ -49,6 +53,11 @@ const ReactHookFormSample04: React.VFC<Props> = ({ errors, fieldProps }) => {
         {/* eslint-disable */}
         <TextLikeField001 {...fieldProps.firstName} />
         <p>{errors.firstName?.message}</p>
+        {/* eslint-enable */}
+
+        {/* eslint-disable */}
+        <HiddenField001 {...fieldProps.fullName} />
+        <p>{errors.fullName?.message}</p>
         {/* eslint-enable */}
 
         {/* eslint-disable */}

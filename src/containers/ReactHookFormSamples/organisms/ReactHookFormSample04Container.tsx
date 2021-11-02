@@ -3,6 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import validationSchema, {
   IFormValues,
 } from 'containers/ReactHookFormSamples/validation-schema';
+import useCombinationField from 'hooks/use-combination-field';
 import useTextLikeField from 'hooks/use-text-like-field';
 import useSelectField from 'hooks/use-select-field';
 
@@ -13,6 +14,7 @@ const ReactHookFormSample04Container: React.VFC = () => {
   const {
     register,
     setValue,
+    watch,
     handleSubmit,
     formState: { errors },
   } = useForm<IFormValues>({
@@ -40,6 +42,13 @@ const ReactHookFormSample04Container: React.VFC = () => {
       register,
       setValue,
       staticOptions: {},
+    }),
+    fullName: useCombinationField<IFormValues>({
+      nameProperty: 'fullName',
+      combinationFieldNames: ['lastName', 'firstName'],
+      register,
+      watch,
+      setValue,
     }),
     age: useSelectField<IFormValues>({
       nameProperty: 'age',
