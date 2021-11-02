@@ -80,7 +80,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({ errors, fieldProps }) => {
 
         {/* eslint-disable */}
         <CheckboxField001 {...fieldProps.checkboxSample} />
-        <p>{errors.radioSample?.message}</p>
+        <p>{errors.checkboxSample?.message}</p>
         {/* eslint-enable */}
 
         <input type="submit" />

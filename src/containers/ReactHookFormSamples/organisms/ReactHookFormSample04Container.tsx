@@ -3,6 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import validationSchema, {
   IFormValues,
 } from 'containers/ReactHookFormSamples/validation-schema';
+import useCheckboxField from 'hooks/use-checkbox-field';
 import useCombinationField from 'hooks/use-combination-field';
 import useRadioField from 'hooks/use-radio-field';
 import useTextLikeField from 'hooks/use-text-like-field';
@@ -77,23 +78,14 @@ const ReactHookFormSample04Container: React.VFC = () => {
         ],
       },
     }),
-    checkboxSample: {
-      ...useRadioField<IFormValues>({
-        nameProperty: 'checkboxSample',
-        defaultValue: '',
-        register,
-        setValue,
-        staticOptions: {
-          choices: [
-            { label: 'Radioタグ選択肢1', value: 'radioTagChoice1' },
-            { label: 'Radioタグ選択肢2', value: 'radioTagChoice2' },
-            { label: 'Radioタグ選択肢3', value: 'radioTagChoice3' },
-          ],
-        },
-      }),
+    checkboxSample: useCheckboxField<IFormValues>({
+      nameProperty: 'checkboxSample',
+      defaultValue: '',
       value: 'on',
       label: 'checkboxサンプル',
-    },
+      register,
+      setValue,
+    }),
   };
 
   return (
