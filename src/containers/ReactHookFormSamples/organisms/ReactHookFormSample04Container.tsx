@@ -67,14 +67,14 @@ const ReactHookFormSample04Container: React.VFC = () => {
     }),
     radioSample: useRadioField<IFormValues>({
       nameProperty: 'radioSample',
-      defaultValue: 'radioTagChoice3',
+      defaultValue: '',
       register,
       setValue,
       staticOptions: {
         choices: [
+          { label: '何も選択しない', value: '' },
           { label: 'Radioタグ選択肢1', value: 'radioTagChoice1' },
           { label: 'Radioタグ選択肢2', value: 'radioTagChoice2' },
-          { label: 'Radioタグ選択肢3', value: 'radioTagChoice3' },
         ],
       },
     }),
