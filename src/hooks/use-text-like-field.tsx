@@ -27,7 +27,6 @@ function useTextLikeField<IFormValues>({
 
   const { onBlur, onChange, ref, name } = { ...register(nameProperty) };
 
-  // フィールドの初期値をセット
   const setDefaultValue = useCallback(() => {
     setValue(nameProperty, defaultValue);
   }, [setValue, nameProperty, defaultValue]);

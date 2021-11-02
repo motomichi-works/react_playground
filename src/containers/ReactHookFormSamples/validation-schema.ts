@@ -6,6 +6,7 @@ const validationSchema = yup
     firstName: yup.string().required('名を入力してください。'),
     fullName: yup.string().max(20, '姓名は合計20文字以内で入力してください。'),
     age: yup.string().required('年齢を選択してください。'),
+    radioSample: yup.string().required('ラジオサンプルを選択してください。'),
   })
   .required();
 
@@ -15,6 +16,7 @@ export const fieldNamesArray = [
   'lastName',
   'fullName',
   'age',
+  'radioSample',
 ] as const;
 export type FieldNamesArray = typeof fieldNamesArray;
 export type FieldNameStrings = FieldNamesArray[number];

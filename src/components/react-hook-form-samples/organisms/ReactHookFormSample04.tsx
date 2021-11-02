@@ -5,6 +5,9 @@ import List002, { Items } from 'components/common/molecules/List002';
 import HiddenField001, {
   HiddenFieldProps,
 } from 'components/common/molecules/HiddenField001';
+import RadioField001, {
+  RadioFieldProps,
+} from 'components/common/molecules/RadioField001';
 import TextLikeField001, {
   TextLikeFieldProps,
 } from 'components/common/molecules/TextLikeField001';
@@ -20,6 +23,7 @@ type Props = {
     firstName: TextLikeFieldProps;
     fullName: HiddenFieldProps;
     age: SelectFieldProps;
+    radioSample: RadioFieldProps;
   };
 };
 
@@ -63,6 +67,11 @@ const ReactHookFormSample04: React.VFC<Props> = ({ errors, fieldProps }) => {
         {/* eslint-disable */}
         <SelectField001 {...fieldProps.age} />
         <p>{errors.age?.message}</p>
+        {/* eslint-enable */}
+
+        {/* eslint-disable */}
+        <RadioField001 {...fieldProps.radioSample} />
+        <p>{errors.radioSample?.message}</p>
         {/* eslint-enable */}
 
         <input type="submit" />

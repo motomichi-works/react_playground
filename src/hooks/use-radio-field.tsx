@@ -7,11 +7,11 @@ import {
   UnpackNestedValue,
 } from 'react-hook-form';
 import {
-  SelectFieldProps,
+  RadioFieldProps,
   Choice,
-} from 'components/common/molecules/SelectField001';
+} from 'components/common/molecules/RadioField001';
 
-function useSelectField<IFormValues>({
+function useRadioField<IFormValues>({
   nameProperty,
   defaultValue,
   register,
@@ -25,7 +25,7 @@ function useSelectField<IFormValues>({
   staticOptions: {
     choices: Choice[];
   };
-}): SelectFieldProps {
+}): RadioFieldProps {
   const { onBlur, onChange, ref, name } = { ...register(nameProperty) };
 
   const setDefaultValue = useCallback(() => {
@@ -37,14 +37,14 @@ function useSelectField<IFormValues>({
   }, [setDefaultValue]);
 
   const handleBlur = useCallback(
-    ({ target, type }: { target: HTMLSelectElement; type: string }) => {
+    ({ target, type }: { target: HTMLInputElement; type: string }) => {
       void onBlur({ target, type });
     },
     [onBlur],
   );
 
   const handleChange = useCallback(
-    ({ target, type }: { target: HTMLSelectElement; type: string }) => {
+    ({ target, type }: { target: HTMLInputElement; type: string }) => {
       void onChange({ target, type });
     },
     [onChange],
@@ -59,4 +59,4 @@ function useSelectField<IFormValues>({
   };
 }
 
-export default useSelectField;
+export default useRadioField;

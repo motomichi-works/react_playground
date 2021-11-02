@@ -4,6 +4,7 @@ import validationSchema, {
   IFormValues,
 } from 'containers/ReactHookFormSamples/validation-schema';
 import useCombinationField from 'hooks/use-combination-field';
+import useRadioField from 'hooks/use-radio-field';
 import useTextLikeField from 'hooks/use-text-like-field';
 import useSelectField from 'hooks/use-select-field';
 
@@ -63,6 +64,21 @@ const ReactHookFormSample04Container: React.VFC = () => {
         ],
       },
     }),
+    radioSample: {
+      ...useRadioField<IFormValues>({
+        nameProperty: 'radioSample',
+        defaultValue: 'radioTagChoice3',
+        register,
+        setValue,
+        staticOptions: {
+          choices: [
+            { label: 'Radioタグ選択肢1', value: 'radioTagChoice1' },
+            { label: 'Radioタグ選択肢2', value: 'radioTagChoice2' },
+            { label: 'Radioタグ選択肢3', value: 'radioTagChoice3' },
+          ],
+        },
+      }),
+    },
   };
 
   return (

@@ -30,20 +30,18 @@ const RadioField001 = React.forwardRef<HTMLInputElement, RadioFieldProps>(
     return (
       <div className={styles.RadioField001}>
         {choices.map((choice) => (
-          <div className={styles.Item}>
+          <div key={`${name}_${choice.value}`} className={styles.Item}>
             <input
-              id={`${choice.label}_${choice.value}`}
+              id={`${name}_${choice.value}`}
               className={styles.Field}
               type="radio"
               name={name}
+              value={choice.value}
               ref={ref}
               onBlur={handleBlur}
               onChange={handleChange}
             />
-            <label
-              className={styles.Label}
-              htmlFor={`${choice.label}_${choice.value}`}
-            >
+            <label className={styles.Label} htmlFor={`${name}_${choice.value}`}>
               {choice.label}
             </label>
           </div>
