@@ -5,15 +5,16 @@ import List002, { Items } from 'components/common/molecules/List002';
 import TextLikeField001, {
   TextLikeFieldProps,
 } from 'components/common/molecules/TextLikeField001';
-import SelectField001 from 'components/common/molecules/SelectField001';
+import SelectField001, {
+  SelectFieldProps,
+} from 'components/common/molecules/SelectField001';
 import { IFormValues } from 'containers/ReactHookFormSamples/validation-schema';
-import { SelectFieldBasicProps } from 'utils/get-select-field-basic-props';
 
 type Props = {
   errors: FieldErrors<IFormValues>;
   fieldProps: {
     firstName: TextLikeFieldProps;
-    age: SelectFieldBasicProps;
+    age: SelectFieldProps;
   };
 };
 
@@ -45,14 +46,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({ errors, fieldProps }) => {
         {/* eslint-enable */}
 
         {/* eslint-disable */}
-        <SelectField001
-          {...fieldProps.age}
-          choices={[
-            { label: '選択してください', value: '' },
-            { label: 'Selectタグ選択肢1', value: 'selectTagChoice1' },
-            { label: 'Selectタグ選択肢2', value: 'selectTagChoice2' },
-          ]}
-        />
+        <SelectField001 {...fieldProps.age} />
         <p>{errors.age?.message}</p>
         {/* eslint-enable */}
 

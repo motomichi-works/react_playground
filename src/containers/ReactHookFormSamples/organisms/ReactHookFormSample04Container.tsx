@@ -3,8 +3,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import validationSchema, {
   IFormValues,
 } from 'containers/ReactHookFormSamples/validation-schema';
-import getSelectFieldBasicProps from 'utils/get-select-field-basic-props';
 import useTextLikeField from 'hooks/use-text-like-field';
+import useSelectField from 'hooks/use-select-field';
 
 // import useMyForm from 'containers/ReactHookFormSamples/use-my-form';
 import ReactHookFormSample04 from 'components/react-hook-form-samples/organisms/ReactHookFormSample04';
@@ -34,15 +34,23 @@ const ReactHookFormSample04Container: React.VFC = () => {
     staticOptions: {},
   });
 
-  const ageFieldBasicProps = getSelectFieldBasicProps({
-    ...register('age'),
+  const ageFieldProps = useSelectField<IFormValues>({
+    nameProperty: 'age',
+    defaultValue: '',
+    register,
+    setValue,
+    staticOptions: {
+      choices: [
+        { label: '選択してください', value: '' },
+        { label: 'Selectタグ選択肢1', value: 'selectTagChoice1' },
+        { label: 'Selectタグ選択肢2', value: 'selectTagChoice2' },
+      ],
+    },
   });
 
   const fieldProps = {
     firstName: firstNameFieldProps,
-    age: {
-      ...ageFieldBasicProps,
-    },
+    age: ageFieldProps,
   };
 
   return (

@@ -1,16 +1,24 @@
-import React, { FocusEvent, ChangeEvent } from 'react';
+import React from 'react';
 import { RefCallBack } from 'react-hook-form';
 import styles from './index.module.scss';
 
-type Choice = {
+export type Choice = {
   label: string;
   value: string;
 };
 
-type SelectFieldProps = {
-  handleBlur: ({ target, type }: FocusEvent<HTMLSelectElement>) => void;
-  handleChange: ({ target, type }: ChangeEvent<HTMLSelectElement>) => void;
-  name?: string;
+type EventHandler = ({
+  target,
+  type,
+}: {
+  target: HTMLSelectElement;
+  type: string;
+}) => void;
+
+export type SelectFieldProps = {
+  handleBlur: EventHandler;
+  handleChange: EventHandler;
+  name: string;
   ref: RefCallBack;
   choices: Choice[];
 };
