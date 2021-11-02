@@ -11,7 +11,7 @@ import {
   Choice,
 } from 'components/common/molecules/SelectField001';
 
-function useTextLikeField<IFormValues>({
+function useSelectField<IFormValues>({
   nameProperty,
   defaultValue,
   register,
@@ -60,4 +60,4 @@ function useTextLikeField<IFormValues>({
   };
 }
 
-export default useTextLikeField;
+export default useSelectField;
