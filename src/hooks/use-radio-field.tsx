@@ -6,10 +6,7 @@ import {
   PathValue,
   UnpackNestedValue,
 } from 'react-hook-form';
-import {
-  RadioFieldProps,
-  Choice,
-} from 'components/common/molecules/RadioField001';
+import { RadioFieldProps } from 'components/common/molecules/RadioField001';
 
 function useRadioField<IFormValues>({
   nameProperty,
@@ -23,7 +20,7 @@ function useRadioField<IFormValues>({
   register: UseFormRegister<IFormValues>;
   setValue: UseFormSetValue<IFormValues>;
   staticOptions: {
-    choices: Choice[];
+    choices: RadioFieldProps['choices'];
   };
 }): RadioFieldProps {
   const { onBlur, onChange, ref, name } = { ...register(nameProperty) };

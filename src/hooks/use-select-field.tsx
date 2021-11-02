@@ -6,10 +6,7 @@ import {
   PathValue,
   UnpackNestedValue,
 } from 'react-hook-form';
-import {
-  SelectFieldProps,
-  Choice,
-} from 'components/common/molecules/SelectField001';
+import { SelectFieldProps } from 'components/common/molecules/SelectField001';
 
 function useSelectField<IFormValues>({
   nameProperty,
@@ -23,7 +20,7 @@ function useSelectField<IFormValues>({
   register: UseFormRegister<IFormValues>;
   setValue: UseFormSetValue<IFormValues>;
   staticOptions: {
-    choices: Choice[];
+    choices: SelectFieldProps['choices'];
   };
 }): SelectFieldProps {
   const { onBlur, onChange, ref, name } = { ...register(nameProperty) };

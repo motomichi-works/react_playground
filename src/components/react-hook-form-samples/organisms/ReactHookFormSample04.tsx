@@ -2,6 +2,9 @@ import { FieldErrors } from 'react-hook-form';
 import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import Frame001 from 'components/common/molecules/Frame001';
 import List002, { Items } from 'components/common/molecules/List002';
+import CheckboxField001, {
+  CheckboxFieldProps,
+} from 'components/common/molecules/CheckboxField001';
 import HiddenField001, {
   HiddenFieldProps,
 } from 'components/common/molecules/HiddenField001';
@@ -24,6 +27,7 @@ type Props = {
     fullName: HiddenFieldProps;
     age: SelectFieldProps;
     radioSample: RadioFieldProps;
+    checkboxSample: CheckboxFieldProps;
   };
 };
 
@@ -71,6 +75,11 @@ const ReactHookFormSample04: React.VFC<Props> = ({ errors, fieldProps }) => {
 
         {/* eslint-disable */}
         <RadioField001 {...fieldProps.radioSample} />
+        <p>{errors.radioSample?.message}</p>
+        {/* eslint-enable */}
+
+        {/* eslint-disable */}
+        <CheckboxField001 {...fieldProps.checkboxSample} />
         <p>{errors.radioSample?.message}</p>
         {/* eslint-enable */}
 

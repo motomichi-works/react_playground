@@ -48,8 +48,8 @@ const ReactHookFormSample04Container: React.VFC = () => {
       nameProperty: 'fullName',
       combinationFieldNames: ['lastName', 'firstName'],
       register,
-      watch,
       setValue,
+      watch,
     }),
     age: useSelectField<IFormValues>({
       nameProperty: 'age',
@@ -64,10 +64,23 @@ const ReactHookFormSample04Container: React.VFC = () => {
         ],
       },
     }),
-    radioSample: {
+    radioSample: useRadioField<IFormValues>({
+      nameProperty: 'radioSample',
+      defaultValue: 'radioTagChoice3',
+      register,
+      setValue,
+      staticOptions: {
+        choices: [
+          { label: 'Radioタグ選択肢1', value: 'radioTagChoice1' },
+          { label: 'Radioタグ選択肢2', value: 'radioTagChoice2' },
+          { label: 'Radioタグ選択肢3', value: 'radioTagChoice3' },
+        ],
+      },
+    }),
+    checkboxSample: {
       ...useRadioField<IFormValues>({
-        nameProperty: 'radioSample',
-        defaultValue: 'radioTagChoice3',
+        nameProperty: 'checkboxSample',
+        defaultValue: '',
         register,
         setValue,
         staticOptions: {
@@ -78,6 +91,8 @@ const ReactHookFormSample04Container: React.VFC = () => {
           ],
         },
       }),
+      value: 'on',
+      label: 'checkboxサンプル',
     },
   };
 

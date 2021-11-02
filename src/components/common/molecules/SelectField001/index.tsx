@@ -2,7 +2,7 @@ import React from 'react';
 import { RefCallBack } from 'react-hook-form';
 import styles from './index.module.scss';
 
-export type Choice = {
+type Choice = {
   label: string;
   value: string;
 };
