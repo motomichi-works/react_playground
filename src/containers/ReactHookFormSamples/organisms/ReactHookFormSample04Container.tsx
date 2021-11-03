@@ -23,6 +23,13 @@ const ReactHookFormSample04Container: React.VFC = () => {
     mode: 'all',
     reValidateMode: 'onSubmit',
     resolver: yupResolver(validationSchema),
+    defaultValues: {
+      lastName: '',
+      firstName: '',
+      age: '',
+      radioSample: '',
+      checkboxSample: '',
+    },
   });
 
   const onSubmit = (data: IFormValues) => {
@@ -33,17 +40,11 @@ const ReactHookFormSample04Container: React.VFC = () => {
   const fieldProps = {
     lastName: useTextLikeField<IFormValues>({
       nameProperty: 'lastName',
-      defaultValue: '',
       register,
-      setValue,
-      staticOptions: {},
     }),
     firstName: useTextLikeField<IFormValues>({
       nameProperty: 'firstName',
-      defaultValue: '',
       register,
-      setValue,
-      staticOptions: {},
     }),
     fullName: useCombinationField<IFormValues>({
       nameProperty: 'fullName',
@@ -54,37 +55,15 @@ const ReactHookFormSample04Container: React.VFC = () => {
     }),
     age: useSelectField<IFormValues>({
       nameProperty: 'age',
-      defaultValue: '',
       register,
-      setValue,
-      staticOptions: {
-        choices: [
-          { label: '選択してください', value: '' },
-          { label: 'Selectタグ選択肢1', value: 'selectTagChoice1' },
-          { label: 'Selectタグ選択肢2', value: 'selectTagChoice2' },
-        ],
-      },
     }),
     radioSample: useRadioField<IFormValues>({
       nameProperty: 'radioSample',
-      defaultValue: '',
       register,
-      setValue,
-      staticOptions: {
-        choices: [
-          { label: '何も選択しない', value: '' },
-          { label: 'Radioタグ選択肢1', value: 'radioTagChoice1' },
-          { label: 'Radioタグ選択肢2', value: 'radioTagChoice2' },
-        ],
-      },
     }),
     checkboxSample: useCheckboxField<IFormValues>({
       nameProperty: 'checkboxSample',
-      defaultValue: '',
-      value: 'on',
-      label: 'checkboxサンプル',
       register,
-      setValue,
     }),
   };
 

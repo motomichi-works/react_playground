@@ -1,37 +1,15 @@
-import { useCallback, useEffect } from 'react';
-import {
-  UseFormRegister,
-  UseFormSetValue,
-  Path,
-  PathValue,
-  UnpackNestedValue,
-} from 'react-hook-form';
+import { useCallback } from 'react';
+import { UseFormRegister, Path } from 'react-hook-form';
 import { CheckboxFieldProps } from 'components/common/molecules/CheckboxField001';
 
-function useRadioField<IFormValues>({
+function useCheckboxField<IFormValues>({
   nameProperty,
-  defaultValue,
-  value,
-  label,
   register,
-  setValue,
 }: {
   nameProperty: Path<IFormValues>;
-  defaultValue: UnpackNestedValue<PathValue<IFormValues, Path<IFormValues>>>;
-  value: string;
-  label: string;
   register: UseFormRegister<IFormValues>;
-  setValue: UseFormSetValue<IFormValues>;
-}): CheckboxFieldProps {
+}): Pick<CheckboxFieldProps, 'handleChange' | 'name' | 'ref'> {
   const { onChange, ref, name } = { ...register(nameProperty) };
-
-  const setDefaultValue = useCallback(() => {
-    setValue(nameProperty, defaultValue);
-  }, [setValue, nameProperty, defaultValue]);
-
-  useEffect(() => {
-    setDefaultValue();
-  }, [setDefaultValue]);
 
   const handleChange = useCallback(
     ({ target, type }: { target: HTMLInputElement; type: string }) => {
@@ -44,9 +22,7 @@ function useRadioField<IFormValues>({
     handleChange,
     ref,
     name,
-    value,
-    label,
   };
 }
 
-export default useRadioField;
+export default useCheckboxField;

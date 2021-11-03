@@ -1,39 +1,17 @@
-import { useRef, useCallback, useEffect, CompositionEvent } from 'react';
-import {
-  UseFormRegister,
-  UseFormSetValue,
-  Path,
-  PathValue,
-  UnpackNestedValue,
-} from 'react-hook-form';
+import { useRef, useCallback, CompositionEvent } from 'react';
+import { UseFormRegister, Path } from 'react-hook-form';
 import { TextLikeFieldProps } from 'components/common/molecules/TextLikeField001';
 
 function useTextLikeField<IFormValues>({
   nameProperty,
-  defaultValue,
   register,
-  setValue,
-  staticOptions,
 }: {
   nameProperty: Path<IFormValues>;
-  defaultValue: UnpackNestedValue<PathValue<IFormValues, Path<IFormValues>>>;
   register: UseFormRegister<IFormValues>;
-  setValue: UseFormSetValue<IFormValues>;
-  staticOptions: {
-    placeholder?: string;
-  };
 }): TextLikeFieldProps {
   const isComposing = useRef<boolean>();
 
   const { onBlur, onChange, ref, name } = { ...register(nameProperty) };
-
-  const setDefaultValue = useCallback(() => {
-    setValue(nameProperty, defaultValue);
-  }, [setValue, nameProperty, defaultValue]);
-
-  useEffect(() => {
-    setDefaultValue();
-  }, [setDefaultValue]);
 
   const handleBlur = useCallback(
     ({ target, type }: { target: HTMLInputElement; type: string }) => {
@@ -75,7 +53,6 @@ function useTextLikeField<IFormValues>({
     handleComposition,
     ref,
     name,
-    ...staticOptions,
   };
 }
 

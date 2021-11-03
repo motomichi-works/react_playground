@@ -25,9 +25,12 @@ type Props = {
     lastName: TextLikeFieldProps;
     firstName: TextLikeFieldProps;
     fullName: HiddenFieldProps;
-    age: SelectFieldProps;
-    radioSample: RadioFieldProps;
-    checkboxSample: CheckboxFieldProps;
+    age: Pick<SelectFieldProps, 'handleBlur' | 'handleChange' | 'name' | 'ref'>;
+    radioSample: Pick<
+      RadioFieldProps,
+      'handleBlur' | 'handleChange' | 'name' | 'ref'
+    >;
+    checkboxSample: Pick<CheckboxFieldProps, 'handleChange' | 'name' | 'ref'>;
   };
 };
 
@@ -69,17 +72,35 @@ const ReactHookFormSample04: React.VFC<Props> = ({ errors, fieldProps }) => {
         {/* eslint-enable */}
 
         {/* eslint-disable */}
-        <SelectField001 {...fieldProps.age} />
+        <SelectField001
+          {...fieldProps.age}
+          choices={[
+            { label: '選択してください', value: '' },
+            { label: 'Selectタグ選択肢1', value: 'selectTagChoice1' },
+            { label: 'Selectタグ選択肢2', value: 'selectTagChoice2' },
+          ]}
+        />
         <p>{errors.age?.message}</p>
         {/* eslint-enable */}
 
         {/* eslint-disable */}
-        <RadioField001 {...fieldProps.radioSample} />
+        <RadioField001
+          {...fieldProps.radioSample}
+          choices={[
+            { label: '何も選択しない', value: '' },
+            { label: 'Radioタグ選択肢1', value: 'radioTagChoice1' },
+            { label: 'Radioタグ選択肢2', value: 'radioTagChoice2' },
+          ]}
+        />
         <p>{errors.radioSample?.message}</p>
         {/* eslint-enable */}
 
         {/* eslint-disable */}
-        <CheckboxField001 {...fieldProps.checkboxSample} />
+        <CheckboxField001
+          {...fieldProps.checkboxSample}
+          value="on"
+          label="checkboxサンプル"
+        />
         <p>{errors.checkboxSample?.message}</p>
         {/* eslint-enable */}
 

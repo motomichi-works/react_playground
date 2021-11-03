@@ -1,37 +1,15 @@
-import { useCallback, useEffect } from 'react';
-import {
-  UseFormRegister,
-  UseFormSetValue,
-  Path,
-  PathValue,
-  UnpackNestedValue,
-} from 'react-hook-form';
+import { useCallback } from 'react';
+import { UseFormRegister, Path } from 'react-hook-form';
 import { SelectFieldProps } from 'components/common/molecules/SelectField001';
 
 function useSelectField<IFormValues>({
   nameProperty,
-  defaultValue,
   register,
-  setValue,
-  staticOptions,
 }: {
   nameProperty: Path<IFormValues>;
-  defaultValue: UnpackNestedValue<PathValue<IFormValues, Path<IFormValues>>>;
   register: UseFormRegister<IFormValues>;
-  setValue: UseFormSetValue<IFormValues>;
-  staticOptions: {
-    choices: SelectFieldProps['choices'];
-  };
-}): SelectFieldProps {
+}): Pick<SelectFieldProps, 'handleBlur' | 'handleChange' | 'name' | 'ref'> {
   const { onBlur, onChange, ref, name } = { ...register(nameProperty) };
-
-  const setDefaultValue = useCallback(() => {
-    setValue(nameProperty, defaultValue);
-  }, [setValue, nameProperty, defaultValue]);
-
-  useEffect(() => {
-    setDefaultValue();
-  }, [setDefaultValue]);
 
   const handleBlur = useCallback(
     ({ target, type }: { target: HTMLSelectElement; type: string }) => {
@@ -52,7 +30,6 @@ function useSelectField<IFormValues>({
     handleChange,
     ref,
     name,
-    ...staticOptions,
   };
 }
 
