@@ -11,16 +11,19 @@ import HiddenField001, {
 import RadioField001, {
   RadioFieldProps,
 } from 'components/common/molecules/RadioField001';
+import TextAreaField001, {
+  TextAreaFieldProps,
+} from 'components/common/molecules/TextAreaField001';
 import TextLikeField001, {
   TextLikeFieldProps,
 } from 'components/common/molecules/TextLikeField001';
 import SelectField001, {
   SelectFieldProps,
 } from 'components/common/molecules/SelectField001';
-import { IFormValues } from 'containers/ReactHookFormSamples/validation-schema';
+import { FormValues } from 'containers/ReactHookFormSamples/validation-schema';
 
 type Props = {
-  errors: FieldErrors<IFormValues>;
+  errors: FieldErrors<FormValues>;
   fieldProps: {
     lastName: TextLikeFieldProps;
     firstName: TextLikeFieldProps;
@@ -31,6 +34,7 @@ type Props = {
       'handleBlur' | 'handleChange' | 'name' | 'ref'
     >;
     checkboxSample: Pick<CheckboxFieldProps, 'handleChange' | 'name' | 'ref'>;
+    textAreaSample: TextAreaFieldProps;
   };
 };
 
@@ -102,6 +106,11 @@ const ReactHookFormSample04: React.VFC<Props> = ({ errors, fieldProps }) => {
           label="checkboxサンプル"
         />
         <p>{errors.checkboxSample?.message}</p>
+        {/* eslint-enable */}
+
+        {/* eslint-disable */}
+        <TextAreaField001 {...fieldProps.textAreaSample} />
+        <p>{errors.textAreaSample?.message}</p>
         {/* eslint-enable */}
 
         <input type="submit" />

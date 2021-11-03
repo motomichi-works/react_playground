@@ -1,11 +1,12 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import validationSchema, {
-  IFormValues,
+  FormValues,
 } from 'containers/ReactHookFormSamples/validation-schema';
 import useCheckboxField from 'hooks/use-checkbox-field';
 import useCombinationField from 'hooks/use-combination-field';
 import useRadioField from 'hooks/use-radio-field';
+import useTextAreaField from 'hooks/use-text-area-field';
 import useTextLikeField from 'hooks/use-text-like-field';
 import useSelectField from 'hooks/use-select-field';
 
@@ -19,7 +20,7 @@ const ReactHookFormSample04Container: React.VFC = () => {
     watch,
     handleSubmit,
     formState: { errors },
-  } = useForm<IFormValues>({
+  } = useForm<FormValues>({
     mode: 'all',
     reValidateMode: 'onSubmit',
     resolver: yupResolver(validationSchema),
@@ -32,37 +33,41 @@ const ReactHookFormSample04Container: React.VFC = () => {
     },
   });
 
-  const onSubmit = (data: IFormValues) => {
+  const onSubmit = (data: FormValues) => {
     // eslint-disable-next-line
     console.log(data);
   };
 
   const fieldProps = {
-    lastName: useTextLikeField<IFormValues>({
+    lastName: useTextLikeField<FormValues>({
       nameProperty: 'lastName',
       register,
     }),
-    firstName: useTextLikeField<IFormValues>({
+    firstName: useTextLikeField<FormValues>({
       nameProperty: 'firstName',
       register,
     }),
-    fullName: useCombinationField<IFormValues>({
+    fullName: useCombinationField<FormValues>({
       nameProperty: 'fullName',
       combinationFieldNames: ['lastName', 'firstName'],
       register,
       setValue,
       watch,
     }),
-    age: useSelectField<IFormValues>({
+    age: useSelectField<FormValues>({
       nameProperty: 'age',
       register,
     }),
-    radioSample: useRadioField<IFormValues>({
+    radioSample: useRadioField<FormValues>({
       nameProperty: 'radioSample',
       register,
     }),
-    checkboxSample: useCheckboxField<IFormValues>({
+    checkboxSample: useCheckboxField<FormValues>({
       nameProperty: 'checkboxSample',
+      register,
+    }),
+    textAreaSample: useTextAreaField<FormValues>({
+      nameProperty: 'textAreaSample',
       register,
     }),
   };

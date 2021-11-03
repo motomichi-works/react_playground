@@ -8,10 +8,14 @@ const validationSchema = yup
     age: yup.string().required('年齢を選択してください。'),
     radioSample: yup.string().required('ラジオサンプルを選択してください。'),
     checkboxSample: yup.string().matches(/on/, 'チェックしてください。'),
+    textAreaSample: yup
+      .string()
+      .required('テキストエリアサンプルを入力してください。'),
   })
   .required();
 
 export default validationSchema;
+
 export const fieldNamesArray = [
   'firstName',
   'lastName',
@@ -19,7 +23,8 @@ export const fieldNamesArray = [
   'age',
   'radioSample',
   'checkboxSample',
+  'textAreaSample',
 ] as const;
-export type FieldNamesArray = typeof fieldNamesArray;
-export type FieldNameStrings = FieldNamesArray[number];
-export type IFormValues = Record<FieldNameStrings, string>;
+type FieldNamesArray = typeof fieldNamesArray;
+type FieldNameStrings = FieldNamesArray[number];
+export type FormValues = Record<FieldNameStrings, string>;
