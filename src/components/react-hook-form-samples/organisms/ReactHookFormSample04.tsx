@@ -1,5 +1,6 @@
 import { FieldErrors } from 'react-hook-form';
 import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
+import FieldErrorMessage from 'components/common/molecules/FieldErrorMessage';
 import Frame001 from 'components/common/molecules/Frame001';
 import List002, { Items } from 'components/common/molecules/List002';
 import CheckboxField001, {
@@ -76,18 +77,22 @@ const ReactHookFormSample04: React.VFC<Props> = ({
       <Frame001 headingText="Demo">
         {/* eslint-disable */}
         <TextLikeField001 {...fieldProps.lastNameKana} />
-        {touchedFields?.lastNameKana && <p>{errors.lastNameKana?.message}</p>}
+        {touchedFields?.lastNameKana && (
+          <FieldErrorMessage message={errors.lastNameKana?.message} />
+        )}
         {/* eslint-enable */}
 
         {/* eslint-disable */}
         <TextLikeField001 {...fieldProps.firstNameKana} />
-        {touchedFields?.firstNameKana && <p>{errors.firstNameKana?.message}</p>}
+        {touchedFields?.firstNameKana && (
+          <FieldErrorMessage message={errors.firstNameKana?.message} />
+        )}
         {/* eslint-enable */}
 
         {/* eslint-disable */}
         <HiddenField001 {...fieldProps.fullName} />
         {touchedFields?.lastNameKana && touchedFields?.firstNameKana && (
-          <p>{errors.fullName?.message}</p>
+          <FieldErrorMessage message={errors.fullName?.message} />
         )}
         {/* eslint-enable */}
 
@@ -100,7 +105,9 @@ const ReactHookFormSample04: React.VFC<Props> = ({
             { label: 'Selectタグ選択肢2', value: 'selectTagChoice2' },
           ]}
         />
-        {touchedFields?.selectSample && <p>{errors.selectSample?.message}</p>}
+        {touchedFields?.selectSample && (
+          <FieldErrorMessage message={errors.selectSample?.message} />
+        )}
         {/* eslint-enable */}
 
         {/* eslint-disable */}
@@ -112,7 +119,9 @@ const ReactHookFormSample04: React.VFC<Props> = ({
             { label: 'Radioタグ選択肢2', value: 'radioTagChoice2' },
           ]}
         />
-        {touchedFields?.radioSample && <p>{errors.radioSample?.message}</p>}
+        {touchedFields?.radioSample && (
+          <FieldErrorMessage message={errors.radioSample?.message} />
+        )}
         {/* eslint-enable */}
 
         {/* eslint-disable */}
@@ -122,14 +131,14 @@ const ReactHookFormSample04: React.VFC<Props> = ({
           label="checkboxサンプル"
         />
         {touchedFields?.checkboxSample && (
-          <p>{errors.checkboxSample?.message}</p>
+          <FieldErrorMessage message={errors.checkboxSample?.message} />
         )}
         {/* eslint-enable */}
 
         {/* eslint-disable */}
         <TextAreaField001 {...fieldProps.textAreaSample} />
         {touchedFields?.textAreaSample && (
-          <p>{errors.textAreaSample?.message}</p>
+          <FieldErrorMessage message={errors.textAreaSample?.message} />
         )}
         {/* eslint-enable */}
 
