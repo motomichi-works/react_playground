@@ -29,8 +29,8 @@ type Props = {
   errors: FieldErrors<FormValues>;
   touchedFields: Partial<Record<FieldNameStrings, true>>;
   fieldProps: {
-    lastName: TextLikeFieldProps;
-    firstName: TextLikeFieldProps;
+    lastNameKana: TextLikeFieldProps;
+    firstNameKana: TextLikeFieldProps;
     fullName: HiddenFieldProps;
     age: Pick<SelectFieldProps, 'handleBlur' | 'handleChange' | 'name' | 'ref'>;
     radioSample: Pick<
@@ -69,18 +69,18 @@ const ReactHookFormSample04: React.VFC<Props> = ({
     <OrganismFrame001 sectionHeadingText="業務を想定して設計する">
       <Frame001 headingText="Demo">
         {/* eslint-disable */}
-        <TextLikeField001 {...fieldProps.lastName} />
-        {touchedFields?.lastName && <p>{errors.lastName?.message}</p>}
+        <TextLikeField001 {...fieldProps.lastNameKana} />
+        {touchedFields?.lastNameKana && <p>{errors.lastNameKana?.message}</p>}
         {/* eslint-enable */}
 
         {/* eslint-disable */}
-        <TextLikeField001 {...fieldProps.firstName} />
-        {touchedFields?.firstName && <p>{errors.firstName?.message}</p>}
+        <TextLikeField001 {...fieldProps.firstNameKana} />
+        {touchedFields?.firstNameKana && <p>{errors.firstNameKana?.message}</p>}
         {/* eslint-enable */}
 
         {/* eslint-disable */}
         <HiddenField001 {...fieldProps.fullName} />
-        {touchedFields?.lastName && touchedFields?.firstName && (
+        {touchedFields?.lastNameKana && touchedFields?.firstNameKana && (
           <p>{errors.fullName?.message}</p>
         )}
         {touchedFields?.fullName ? 'true' : 'false'}

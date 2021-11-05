@@ -25,8 +25,8 @@ const ReactHookFormSample04Container: React.VFC = () => {
     reValidateMode: 'onSubmit',
     resolver: yupResolver(validationSchema),
     defaultValues: {
-      lastName: '',
-      firstName: '',
+      lastNameKana: '',
+      firstNameKana: '',
       age: '',
       radioSample: '',
       checkboxSample: '',
@@ -39,17 +39,17 @@ const ReactHookFormSample04Container: React.VFC = () => {
   };
 
   const fieldProps = {
-    lastName: useTextLikeField<FormValues>({
-      nameProperty: 'lastName',
+    lastNameKana: useTextLikeField<FormValues>({
+      nameProperty: 'lastNameKana',
       register,
     }),
-    firstName: useTextLikeField<FormValues>({
-      nameProperty: 'firstName',
+    firstNameKana: useTextLikeField<FormValues>({
+      nameProperty: 'firstNameKana',
       register,
     }),
     fullName: useCombinationField<FormValues>({
       nameProperty: 'fullName',
-      combinationFieldNames: ['lastName', 'firstName'],
+      combinationFieldNames: ['lastNameKana', 'firstNameKana'],
       register,
       setValue,
       watch,
