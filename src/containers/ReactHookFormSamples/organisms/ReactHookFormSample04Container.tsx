@@ -30,6 +30,7 @@ const ReactHookFormSample04Container: React.VFC = () => {
       selectSample: '',
       radioSample: '',
       checkboxSample: '',
+      textAreaSample: '',
     },
   });
 
