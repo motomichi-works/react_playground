@@ -27,7 +27,7 @@ const ReactHookFormSample04Container: React.VFC = () => {
     defaultValues: {
       lastNameKana: '',
       firstNameKana: '',
-      age: '',
+      selectSample: '',
       radioSample: '',
       checkboxSample: '',
     },
@@ -54,8 +54,8 @@ const ReactHookFormSample04Container: React.VFC = () => {
       setValue,
       watch,
     }),
-    age: useSelectField<FormValues>({
-      nameProperty: 'age',
+    selectSample: useSelectField<FormValues>({
+      nameProperty: 'selectSample',
       register,
     }),
     radioSample: useRadioField<FormValues>({

@@ -21,7 +21,7 @@ const validationSchema = yup
     fullName: yup
       .string()
       .max(20, '姓(カナ)と名(カナ)は合計20文字以内で入力してください。'),
-    age: yup.string().required('年齢を選択してください。'),
+    selectSample: yup.string().required('セレクトサンプルを選択してください。'),
     radioSample: yup.string().required('ラジオサンプルを選択してください。'),
     checkboxSample: yup.string().matches(/on/, 'チェックしてください。'),
     textAreaSample: yup
@@ -36,7 +36,7 @@ export const fieldNamesArray = [
   'firstNameKana',
   'lastNameKana',
   'fullName',
-  'age',
+  'selectSample',
   'radioSample',
   'checkboxSample',
   'textAreaSample',

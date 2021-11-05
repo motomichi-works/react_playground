@@ -32,7 +32,10 @@ type Props = {
     lastNameKana: TextLikeFieldProps;
     firstNameKana: TextLikeFieldProps;
     fullName: HiddenFieldProps;
-    age: Pick<SelectFieldProps, 'handleBlur' | 'handleChange' | 'name' | 'ref'>;
+    selectSample: Pick<
+      SelectFieldProps,
+      'handleBlur' | 'handleChange' | 'name' | 'ref'
+    >;
     radioSample: Pick<
       RadioFieldProps,
       'handleBlur' | 'handleChange' | 'name' | 'ref'
@@ -88,14 +91,14 @@ const ReactHookFormSample04: React.VFC<Props> = ({
 
         {/* eslint-disable */}
         <SelectField001
-          {...fieldProps.age}
+          {...fieldProps.selectSample}
           choices={[
             { label: '選択してください', value: '' },
             { label: 'Selectタグ選択肢1', value: 'selectTagChoice1' },
             { label: 'Selectタグ選択肢2', value: 'selectTagChoice2' },
           ]}
         />
-        {touchedFields?.age && <p>{errors.age?.message}</p>}
+        {touchedFields?.selectSample && <p>{errors.selectSample?.message}</p>}
         {/* eslint-enable */}
 
         {/* eslint-disable */}
