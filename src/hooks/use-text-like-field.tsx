@@ -2,12 +2,16 @@ import { useRef, useCallback, CompositionEvent } from 'react';
 import { UseFormRegister, Path } from 'react-hook-form';
 import { TextLikeFieldProps } from 'components/common/molecules/TextLikeField001';
 
+type Converter = (str: string) => string;
+
 function useTextLikeField<IFormValues>({
   nameProperty,
   register,
+  converters,
 }: {
   nameProperty: Path<IFormValues>;
   register: UseFormRegister<IFormValues>;
+  converters?: Converter[];
 }): TextLikeFieldProps {
   const isComposing = useRef<boolean>();
 
@@ -15,10 +19,20 @@ function useTextLikeField<IFormValues>({
 
   const handleBlur = useCallback(
     ({ target, type }: { target: HTMLInputElement; type: string }) => {
-      // ここでfieldValueの加工や、stateの更新をします。
+      let { value } = target;
+
+      if (converters) {
+        for (let i = 0; i < converters.length; i += 1) {
+          value = converters[i](value);
+        }
+      }
+
+      // eslint-disable-next-line no-param-reassign
+      target.value = value;
+
       void onBlur({ target, type });
     },
-    [onBlur],
+    [onBlur, converters],
   );
 
   const handleChange = useCallback(

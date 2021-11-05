@@ -9,6 +9,7 @@ import useRadioField from 'hooks/use-radio-field';
 import useTextAreaField from 'hooks/use-text-area-field';
 import useTextLikeField from 'hooks/use-text-like-field';
 import useSelectField from 'hooks/use-select-field';
+import toSingleByteNumber from 'utils/to-single-byte-number';
 
 // import useMyForm from 'containers/ReactHookFormSamples/use-my-form';
 import ReactHookFormSample04 from 'components/react-hook-form-samples/organisms/ReactHookFormSample04';
@@ -43,6 +44,7 @@ const ReactHookFormSample04Container: React.VFC = () => {
     lastNameKana: useTextLikeField<FormValues>({
       nameProperty: 'lastNameKana',
       register,
+      converters: [toSingleByteNumber],
     }),
     firstNameKana: useTextLikeField<FormValues>({
       nameProperty: 'firstNameKana',
