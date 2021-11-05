@@ -26,5 +26,5 @@ export const fieldNamesArray = [
   'textAreaSample',
 ] as const;
 type FieldNamesArray = typeof fieldNamesArray;
-type FieldNameStrings = FieldNamesArray[number];
+export type FieldNameStrings = FieldNamesArray[number];
 export type FormValues = Record<FieldNameStrings, string>;

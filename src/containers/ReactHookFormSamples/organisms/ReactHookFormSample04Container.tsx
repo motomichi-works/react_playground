@@ -19,7 +19,7 @@ const ReactHookFormSample04Container: React.VFC = () => {
     setValue,
     watch,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, touchedFields },
   } = useForm<FormValues>({
     mode: 'all',
     reValidateMode: 'onSubmit',
@@ -74,7 +74,11 @@ const ReactHookFormSample04Container: React.VFC = () => {
 
   return (
     <form className="u-MT64" onSubmit={handleSubmit(onSubmit)}>
-      <ReactHookFormSample04 errors={errors} fieldProps={fieldProps} />
+      <ReactHookFormSample04
+        errors={errors}
+        touchedFields={touchedFields}
+        fieldProps={fieldProps}
+      />
     </form>
   );
 };
