@@ -1,4 +1,4 @@
-import React, { CompositionEvent } from 'react';
+import React from 'react';
 import { RefCallBack } from 'react-hook-form';
 import styles from './index.module.scss';
 
@@ -16,7 +16,10 @@ export type TextLikeFieldProps = {
   handleComposition: ({
     target,
     type,
-  }: CompositionEvent<HTMLInputElement>) => void;
+  }: {
+    target: Partial<HTMLInputElement>;
+    type: string;
+  }) => void;
   name: string;
   ref: RefCallBack;
   typeProperty?: 'text' | 'tel';

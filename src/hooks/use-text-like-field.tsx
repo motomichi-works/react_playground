@@ -1,4 +1,4 @@
-import { useRef, useCallback, CompositionEvent } from 'react';
+import { useRef, useCallback } from 'react';
 import { UseFormRegister, Path } from 'react-hook-form';
 import { TextLikeFieldProps } from 'components/common/molecules/TextLikeField001';
 
@@ -48,17 +48,18 @@ function useTextLikeField<IFormValues>({
   );
 
   const handleComposition = useCallback(
-    (event: CompositionEvent<HTMLInputElement>) => {
-      console.log('handleComposition: ', event);
+    ({ target, type }: { target: Partial<HTMLInputElement>; type: string }) => {
+      console.log('target: ', target.value);
+      console.log('type: ', type);
 
-      if (event.type === 'compositionstart') isComposing.current = true;
-      if (event.type === 'compositionend') isComposing.current = false;
+      if (type === 'compositionstart') isComposing.current = true;
+      if (type === 'compositionend') isComposing.current = false;
 
       if (isComposing.current === true) return;
-      if (event.type !== 'compositionend') return;
+      if (type !== 'compositionend') return;
 
       // ここでfieldValueの加工や、stateの更新をします。
-      void onChange(event);
+      void onChange({ target, type });
     },
     [onChange],
   );
