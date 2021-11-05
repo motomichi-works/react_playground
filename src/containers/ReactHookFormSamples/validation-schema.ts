@@ -23,7 +23,9 @@ const validationSchema = yup
       .max(20, '姓(カナ)と名(カナ)は合計20文字以内で入力してください。'),
     selectSample: yup.string().required('セレクトサンプルを選択してください。'),
     radioSample: yup.string().required('ラジオサンプルを選択してください。'),
-    checkboxSample: yup.string().matches(/on/, 'チェックしてください。'),
+    checkboxSample: yup
+      .string()
+      .matches(/on/, 'checkboxサンプルをチェックしてください。'),
     textAreaSample: yup
       .string()
       .required('テキストエリアサンプルを入力してください。'),

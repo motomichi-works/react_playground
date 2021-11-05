@@ -11,6 +11,7 @@ type EventHandler = ({
 }) => void;
 
 export type CheckboxFieldProps = {
+  handleBlur: EventHandler;
   handleChange: EventHandler;
   name: string;
   value: string;
@@ -20,7 +21,7 @@ export type CheckboxFieldProps = {
 
 const CheckboxField001 = React.forwardRef<HTMLInputElement, CheckboxFieldProps>(
   (props, ref) => {
-    const { handleChange, name, value, label } = props;
+    const { handleBlur, handleChange, name, value, label } = props;
 
     return (
       <div className={styles.CheckboxField001}>
@@ -31,6 +32,7 @@ const CheckboxField001 = React.forwardRef<HTMLInputElement, CheckboxFieldProps>(
           name={name}
           value={value}
           ref={ref}
+          onBlur={handleBlur}
           onChange={handleChange}
         />
         <label className={styles.Label} htmlFor={`${name}_${value}`}>

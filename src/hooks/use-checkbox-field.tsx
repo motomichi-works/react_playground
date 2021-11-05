@@ -8,8 +8,16 @@ function useCheckboxField<IFormValues>({
 }: {
   nameProperty: Path<IFormValues>;
   register: UseFormRegister<IFormValues>;
-}): Pick<CheckboxFieldProps, 'handleChange' | 'name' | 'ref'> {
-  const { onChange, ref, name } = { ...register(nameProperty) };
+}): Pick<CheckboxFieldProps, 'handleBlur' | 'handleChange' | 'name' | 'ref'> {
+  const { onBlur, onChange, ref, name } = { ...register(nameProperty) };
+
+  // NOTE: blurイベント発火時にonBlurが実行されることによってtouchedFieldsが更新されるため、handleBlurも定義します。
+  const handleBlur = useCallback(
+    ({ target, type }: { target: HTMLInputElement; type: string }) => {
+      void onBlur({ target, type });
+    },
+    [onBlur],
+  );
 
   const handleChange = useCallback(
     ({ target, type }: { target: HTMLInputElement; type: string }) => {
@@ -19,6 +27,7 @@ function useCheckboxField<IFormValues>({
   );
 
   return {
+    handleBlur,
     handleChange,
     ref,
     name,

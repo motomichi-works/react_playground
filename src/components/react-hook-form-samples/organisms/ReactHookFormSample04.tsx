@@ -40,7 +40,10 @@ type Props = {
       RadioFieldProps,
       'handleBlur' | 'handleChange' | 'name' | 'ref'
     >;
-    checkboxSample: Pick<CheckboxFieldProps, 'handleChange' | 'name' | 'ref'>;
+    checkboxSample: Pick<
+      CheckboxFieldProps,
+      'handleBlur' | 'handleChange' | 'name' | 'ref'
+    >;
     textAreaSample: TextAreaFieldProps;
   };
 };
@@ -86,7 +89,6 @@ const ReactHookFormSample04: React.VFC<Props> = ({
         {touchedFields?.lastNameKana && touchedFields?.firstNameKana && (
           <p>{errors.fullName?.message}</p>
         )}
-        {touchedFields?.fullName ? 'true' : 'false'}
         {/* eslint-enable */}
 
         {/* eslint-disable */}
