@@ -75,28 +75,21 @@ const ReactHookFormSample04: React.VFC<Props> = ({
   return (
     <OrganismFrame001 sectionHeadingText="業務を想定して設計する">
       <Frame001 headingText="Demo">
-        {/* eslint-disable */}
         <TextLikeField001 {...fieldProps.lastNameKana} />
         {touchedFields?.lastNameKana && (
           <FieldErrorMessage message={errors.lastNameKana?.message} />
         )}
-        {/* eslint-enable */}
 
-        {/* eslint-disable */}
         <TextLikeField001 {...fieldProps.firstNameKana} />
         {touchedFields?.firstNameKana && (
           <FieldErrorMessage message={errors.firstNameKana?.message} />
         )}
-        {/* eslint-enable */}
 
-        {/* eslint-disable */}
         <HiddenField001 {...fieldProps.fullName} />
         {touchedFields?.lastNameKana && touchedFields?.firstNameKana && (
           <FieldErrorMessage message={errors.fullName?.message} />
         )}
-        {/* eslint-enable */}
 
-        {/* eslint-disable */}
         <SelectField001
           {...fieldProps.selectSample}
           choices={[
@@ -108,9 +101,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
         {touchedFields?.selectSample && (
           <FieldErrorMessage message={errors.selectSample?.message} />
         )}
-        {/* eslint-enable */}
 
-        {/* eslint-disable */}
         <RadioField001
           {...fieldProps.radioSample}
           choices={[
@@ -122,9 +113,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
         {touchedFields?.radioSample && (
           <FieldErrorMessage message={errors.radioSample?.message} />
         )}
-        {/* eslint-enable */}
 
-        {/* eslint-disable */}
         <CheckboxField001
           {...fieldProps.checkboxSample}
           value="on"
@@ -133,14 +122,11 @@ const ReactHookFormSample04: React.VFC<Props> = ({
         {touchedFields?.checkboxSample && (
           <FieldErrorMessage message={errors.checkboxSample?.message} />
         )}
-        {/* eslint-enable */}
 
-        {/* eslint-disable */}
         <TextAreaField001 {...fieldProps.textAreaSample} />
         {touchedFields?.textAreaSample && (
           <FieldErrorMessage message={errors.textAreaSample?.message} />
         )}
-        {/* eslint-enable */}
 
         <input type="submit" />
       </Frame001>

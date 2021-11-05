@@ -11,5 +11,5 @@ export const getPrimes = (maxRange: number): number[] => {
     return true;
   });
 
-  return primes as number[];
+  return primes;
 };
