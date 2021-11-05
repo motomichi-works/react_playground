@@ -48,15 +48,17 @@ function useTextLikeField<IFormValues>({
   );
 
   const handleComposition = useCallback(
-    ({ target, type }: CompositionEvent<HTMLInputElement>) => {
-      if (type === 'compositionstart') isComposing.current = true;
-      if (type === 'compositionend') isComposing.current = false;
+    (event: CompositionEvent<HTMLInputElement>) => {
+      console.log('handleComposition: ', event);
+
+      if (event.type === 'compositionstart') isComposing.current = true;
+      if (event.type === 'compositionend') isComposing.current = false;
 
       if (isComposing.current === true) return;
-      if (type !== 'compositionend') return;
+      if (event.type !== 'compositionend') return;
 
       // ここでfieldValueの加工や、stateの更新をします。
-      void onChange({ target, type });
+      void onChange(event);
     },
     [onChange],
   );
