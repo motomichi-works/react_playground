@@ -120,15 +120,24 @@ const ReactHookFormSample04: React.VFC<Props> = ({
           <FieldErrorMessage message={errors.radioSample?.message} />
         )}
 
-        <FieldHeading001 text="チェックボックスサンプル" />
-        <CheckboxField001
-          {...fieldProps.checkboxSample}
-          value="on"
-          label="チェックボックスサンプル"
-        />
-        {touchedFields?.checkboxSample && (
-          <FieldErrorMessage message={errors.checkboxSample?.message} />
-        )}
+        <FieldUnit001
+          fieldHeadingProps={{
+            text: 'チェックボックスサンプル',
+            badgeType: 'required',
+          }}
+          isVisibleErrorMessage={
+            touchedFields !== undefined &&
+            touchedFields.checkboxSample === true &&
+            errors.checkboxSample !== undefined
+          }
+          errorMessage={errors.checkboxSample?.message}
+        >
+          <CheckboxField001
+            {...fieldProps.checkboxSample}
+            value="on"
+            label="チェックボックスサンプル"
+          />
+        </FieldUnit001>
 
         <FieldUnit001
           fieldHeadingProps={{
