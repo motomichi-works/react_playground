@@ -24,7 +24,7 @@ const FieldHeading001: React.FC<FieldHeadingProps> = ({ badgeType, text }) => {
   };
 
   return (
-    <div className={styles.FieldHeading001}>
+    <div className={styles.FieldHeading001} data-adj="FieldHeading001">
       {badgeRender(badgeType)}
       <div className={styles.Text} data-adj="Text">
         {text}

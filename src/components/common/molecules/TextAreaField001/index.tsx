@@ -28,7 +28,7 @@ const TextAreaField001 = React.forwardRef<
   const { handleBlur, handleChange, handleComposition, name } = props;
 
   return (
-    <div className={styles.TextAreaField001}>
+    <div className={styles.TextAreaField001} data-adj="TextAreaField001">
       <textarea
         className={styles.Field}
         name={name}
