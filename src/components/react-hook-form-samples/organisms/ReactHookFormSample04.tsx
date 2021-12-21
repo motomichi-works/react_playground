@@ -94,18 +94,25 @@ const ReactHookFormSample04: React.VFC<Props> = ({
           <FieldErrorMessage message={errors.fullName?.message} />
         )}
 
-        <FieldHeading001 text="セレクトサンプル" />
-        <SelectField001
-          {...fieldProps.selectSample}
-          choices={[
-            { label: '選択してください', value: '' },
-            { label: 'Selectタグ選択肢1', value: 'selectTagChoice1' },
-            { label: 'Selectタグ選択肢2', value: 'selectTagChoice2' },
-          ]}
+        <FieldHeading001 text="セレクトサンプル" badgeType="required" />
+        <FieldUnit001
+          field={
+            <SelectField001
+              {...fieldProps.selectSample}
+              choices={[
+                { label: '選択してください', value: '' },
+                { label: 'Selectタグ選択肢1', value: 'selectTagChoice1' },
+                { label: 'Selectタグ選択肢2', value: 'selectTagChoice2' },
+              ]}
+            />
+          }
+          isVisibleErrorMessage={
+            touchedFields !== undefined &&
+            touchedFields.selectSample === true &&
+            errors.selectSample !== undefined
+          }
+          errorMessage={errors.selectSample?.message}
         />
-        {touchedFields?.selectSample && (
-          <FieldErrorMessage message={errors.selectSample?.message} />
-        )}
 
         <FieldHeading001 text="ラジオサンプル" badgeType="required" />
         <FieldUnit001
