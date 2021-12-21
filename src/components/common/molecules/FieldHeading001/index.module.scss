@@ -2,9 +2,19 @@
   display: block;
 }
 
+.BadgeWrapper {
+  display: inline-block;
+}
+
 .Text {
   display: inline-block;
   line-height: 26px;
   height: 26px;
   vertical-align: top;
+  font-weight: 700;
+}
+
+// 隣接要素セレクタによるマージン
+[data-adj="BadgeWrapper"] + [data-adj="Text"] {
+  margin-left: 4px;
 }

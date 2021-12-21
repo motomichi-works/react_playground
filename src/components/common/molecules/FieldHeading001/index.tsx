@@ -9,16 +9,26 @@ export type FieldHeadingProps = {
 const FieldHeading001: React.FC<FieldHeadingProps> = ({ badgeType, text }) => {
   const badgeRender = (type: string | undefined) => {
     if (type === 'required') {
-      return <Badge001 text="必須" />;
+      return (
+        <div className={styles.BadgeWrapper} data-adj="BadgeWrapper">
+          <Badge001 text="必須" />
+        </div>
+      );
     }
 
-    return <Badge001 text="任意" modifierClassNames={['m_BgColorGray']} />;
+    return (
+      <div className={styles.BadgeWrapper} data-adj="BadgeWrapper">
+        <Badge001 text="任意" modifierClassNames={['m_BgColorGray']} />
+      </div>
+    );
   };
 
   return (
     <div className={styles.FieldHeading001}>
       {badgeRender(badgeType)}
-      <div className={styles.Text}>{text}</div>
+      <div className={styles.Text} data-adj="Text">
+        {text}
+      </div>
     </div>
   );
 };
