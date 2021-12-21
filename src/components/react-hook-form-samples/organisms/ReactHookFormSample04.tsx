@@ -14,7 +14,9 @@ import HiddenField001, {
 import RadioField001, {
   RadioFieldProps,
 } from 'components/common/molecules/RadioField001';
-import { TextAreaFieldProps } from 'components/common/molecules/TextAreaField001';
+import TextAreaField001, {
+  TextAreaFieldProps,
+} from 'components/common/molecules/TextAreaField001';
 import TextLikeField001, {
   TextLikeFieldProps,
 } from 'components/common/molecules/TextLikeField001';
@@ -133,14 +135,15 @@ const ReactHookFormSample04: React.VFC<Props> = ({
             text: 'テキストエリアサンプル',
             badgeType: 'required',
           }}
-          textAreaFieldProps={fieldProps.textAreaSample}
           isVisibleErrorMessage={
             touchedFields !== undefined &&
             touchedFields.textAreaSample === true &&
             errors.textAreaSample !== undefined
           }
           errorMessage={errors.textAreaSample?.message}
-        />
+        >
+          <TextAreaField001 {...fieldProps.textAreaSample} />
+        </TextAreaFieldUnit001>
 
         <input type="submit" />
       </Frame001>
