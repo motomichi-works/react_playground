@@ -121,6 +121,13 @@ const ReactHookFormSample04: React.VFC<Props> = ({
         )}
 
         <FieldUnit001
+          field={
+            <CheckboxField001
+              {...fieldProps.checkboxSample}
+              value="on"
+              label="チェックボックスサンプル"
+            />
+          }
           fieldHeadingProps={{
             text: 'チェックボックスサンプル',
             badgeType: 'required',
@@ -131,15 +138,10 @@ const ReactHookFormSample04: React.VFC<Props> = ({
             errors.checkboxSample !== undefined
           }
           errorMessage={errors.checkboxSample?.message}
-        >
-          <CheckboxField001
-            {...fieldProps.checkboxSample}
-            value="on"
-            label="チェックボックスサンプル"
-          />
-        </FieldUnit001>
+        />
 
         <FieldUnit001
+          field={<TextAreaField001 {...fieldProps.textAreaSample} />}
           fieldHeadingProps={{
             text: 'テキストエリアサンプル',
             badgeType: 'required',
@@ -150,9 +152,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
             errors.textAreaSample !== undefined
           }
           errorMessage={errors.textAreaSample?.message}
-        >
-          <TextAreaField001 {...fieldProps.textAreaSample} />
-        </FieldUnit001>
+        />
 
         <input type="submit" />
       </Frame001>

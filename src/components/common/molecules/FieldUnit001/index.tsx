@@ -6,20 +6,21 @@ import FieldHeading001, {
 import styles from './index.module.scss';
 
 type Props = {
+  field: JSX.Element;
   fieldHeadingProps: FieldHeadingProps;
   isVisibleErrorMessage: boolean;
   errorMessage: string | undefined;
 };
 
 const FieldUnit001: React.FC<Props> = ({
+  field,
   fieldHeadingProps,
   isVisibleErrorMessage,
   errorMessage,
-  children,
 }) => (
   <div className={styles.FieldUnit001}>
     <FieldHeading001 {...fieldHeadingProps} />
-    {children}
+    {field}
     {isVisibleErrorMessage && <FieldErrorMessage message={errorMessage} />}
   </div>
 );
