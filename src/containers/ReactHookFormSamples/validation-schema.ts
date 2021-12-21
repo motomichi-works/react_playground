@@ -25,7 +25,7 @@ const validationSchema = yup
     radioSample: yup.string().required('ラジオサンプルを選択してください。'),
     checkboxSample: yup
       .string()
-      .matches(/on/, 'checkboxサンプルをチェックしてください。'),
+      .matches(/on/, 'チェックボックスサンプルをチェックしてください。'),
     textAreaSample: yup
       .string()
       .required('テキストエリアサンプルを入力してください。'),

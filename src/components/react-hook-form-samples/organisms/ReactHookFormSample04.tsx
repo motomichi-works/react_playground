@@ -1,6 +1,7 @@
 import { FieldErrors } from 'react-hook-form';
 import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import FieldErrorMessage from 'components/common/molecules/FieldErrorMessage';
+import FieldHeading001 from 'components/common/molecules/FieldHeading001';
 import Frame001 from 'components/common/molecules/Frame001';
 import List002, { Items } from 'components/common/molecules/List002';
 import CheckboxField001, {
@@ -75,11 +76,13 @@ const ReactHookFormSample04: React.VFC<Props> = ({
   return (
     <OrganismFrame001 sectionHeadingText="業務を想定して設計する">
       <Frame001 headingText="Demo">
+        <FieldHeading001 text="姓（カナ）" />
         <TextLikeField001 {...fieldProps.lastNameKana} />
         {touchedFields?.lastNameKana && (
           <FieldErrorMessage message={errors.lastNameKana?.message} />
         )}
 
+        <FieldHeading001 text="名（カナ）" />
         <TextLikeField001 {...fieldProps.firstNameKana} />
         {touchedFields?.firstNameKana && (
           <FieldErrorMessage message={errors.firstNameKana?.message} />
@@ -90,6 +93,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
           <FieldErrorMessage message={errors.fullName?.message} />
         )}
 
+        <FieldHeading001 text="セレクトサンプル" />
         <SelectField001
           {...fieldProps.selectSample}
           choices={[
@@ -102,6 +106,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
           <FieldErrorMessage message={errors.selectSample?.message} />
         )}
 
+        <FieldHeading001 text="ラジオサンプル" />
         <RadioField001
           {...fieldProps.radioSample}
           choices={[
@@ -114,15 +119,17 @@ const ReactHookFormSample04: React.VFC<Props> = ({
           <FieldErrorMessage message={errors.radioSample?.message} />
         )}
 
+        <FieldHeading001 text="チェックボックスサンプル" />
         <CheckboxField001
           {...fieldProps.checkboxSample}
           value="on"
-          label="checkboxサンプル"
+          label="チェックボックスサンプル"
         />
         {touchedFields?.checkboxSample && (
           <FieldErrorMessage message={errors.checkboxSample?.message} />
         )}
 
+        <FieldHeading001 text="テキストエリアサンプル" />
         <TextAreaField001 {...fieldProps.textAreaSample} />
         {touchedFields?.textAreaSample && (
           <FieldErrorMessage message={errors.textAreaSample?.message} />
