@@ -129,7 +129,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
         )}
 
         <TextAreaFieldUnit001
-          headingText="テキストエリアサンプル"
+          fieldHeadingProps={{ text: 'テキストエリアサンプル' }}
           textAreaFieldProps={fieldProps.textAreaSample}
           isVisibleErrorMessage={
             touchedFields !== undefined &&
