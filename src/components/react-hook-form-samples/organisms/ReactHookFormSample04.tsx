@@ -1,6 +1,7 @@
 import { FieldErrors } from 'react-hook-form';
 import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import FieldErrorMessage from 'components/common/molecules/FieldErrorMessage';
+import TextAreaFieldUnit001 from 'components/common/molecules/TextAreaFieldUnit001';
 import FieldHeading001 from 'components/common/molecules/FieldHeading001';
 import Frame001 from 'components/common/molecules/Frame001';
 import List002, { Items } from 'components/common/molecules/List002';
@@ -13,9 +14,7 @@ import HiddenField001, {
 import RadioField001, {
   RadioFieldProps,
 } from 'components/common/molecules/RadioField001';
-import TextAreaField001, {
-  TextAreaFieldProps,
-} from 'components/common/molecules/TextAreaField001';
+import { TextAreaFieldProps } from 'components/common/molecules/TextAreaField001';
 import TextLikeField001, {
   TextLikeFieldProps,
 } from 'components/common/molecules/TextLikeField001';
@@ -129,11 +128,16 @@ const ReactHookFormSample04: React.VFC<Props> = ({
           <FieldErrorMessage message={errors.checkboxSample?.message} />
         )}
 
-        <FieldHeading001 text="テキストエリアサンプル" />
-        <TextAreaField001 {...fieldProps.textAreaSample} />
-        {touchedFields?.textAreaSample && (
-          <FieldErrorMessage message={errors.textAreaSample?.message} />
-        )}
+        <TextAreaFieldUnit001
+          headingText="テキストエリアサンプル"
+          textAreaFieldProps={fieldProps.textAreaSample}
+          isVisibleErrorMessage={
+            touchedFields !== undefined &&
+            touchedFields.textAreaSample === true &&
+            errors.textAreaSample !== undefined
+          }
+          errorMessage={errors.textAreaSample?.message}
+        />
 
         <input type="submit" />
       </Frame001>
