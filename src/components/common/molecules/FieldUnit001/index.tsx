@@ -11,17 +11,17 @@ type Props = {
   errorMessage: string | undefined;
 };
 
-const TextAreaFieldUnit001: React.FC<Props> = ({
+const FieldUnit001: React.FC<Props> = ({
   fieldHeadingProps,
   isVisibleErrorMessage,
   errorMessage,
   children,
 }) => (
-  <div className={styles.TextAreaFieldUnit001}>
+  <div className={styles.FieldUnit001}>
     <FieldHeading001 {...fieldHeadingProps} />
     {children}
     {isVisibleErrorMessage && <FieldErrorMessage message={errorMessage} />}
   </div>
 );
 
-export default TextAreaFieldUnit001;
+export default FieldUnit001;

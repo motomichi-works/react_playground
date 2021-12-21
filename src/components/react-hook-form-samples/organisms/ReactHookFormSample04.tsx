@@ -1,7 +1,7 @@
 import { FieldErrors } from 'react-hook-form';
 import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
 import FieldErrorMessage from 'components/common/molecules/FieldErrorMessage';
-import TextAreaFieldUnit001 from 'components/common/molecules/TextAreaFieldUnit001';
+import FieldUnit001 from 'components/common/molecules/FieldUnit001';
 import FieldHeading001 from 'components/common/molecules/FieldHeading001';
 import Frame001 from 'components/common/molecules/Frame001';
 import List002, { Items } from 'components/common/molecules/List002';
@@ -130,7 +130,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
           <FieldErrorMessage message={errors.checkboxSample?.message} />
         )}
 
-        <TextAreaFieldUnit001
+        <FieldUnit001
           fieldHeadingProps={{
             text: 'テキストエリアサンプル',
             badgeType: 'required',
@@ -143,7 +143,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
           errorMessage={errors.textAreaSample?.message}
         >
           <TextAreaField001 {...fieldProps.textAreaSample} />
-        </TextAreaFieldUnit001>
+        </FieldUnit001>
 
         <input type="submit" />
       </Frame001>
