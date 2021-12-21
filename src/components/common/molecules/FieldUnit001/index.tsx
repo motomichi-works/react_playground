@@ -13,7 +13,7 @@ const FieldUnit001: React.FC<Props> = ({
   isVisibleErrorMessage,
   errorMessage,
 }) => (
-  <div className={styles.FieldUnit001}>
+  <div className={styles.FieldUnit001} data-adj="FieldUnit001">
     {field}
     {isVisibleErrorMessage && <FieldErrorMessage message={errorMessage} />}
   </div>

@@ -1,3 +1,7 @@
-[data-adj="FieldHeading001"] + [data-adj="TextAreaField001"] {
-  margin-top: 4px;
+[data-adj="FieldHeading001"] + [data-adj="FieldUnit001"] {
+  margin-top: 12px;
+}
+
+[data-adj="FieldUnit001"] + [data-adj="FieldHeading001"] {
+  margin-top: 48px;
 }
