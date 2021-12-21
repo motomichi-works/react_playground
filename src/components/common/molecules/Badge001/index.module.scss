@@ -1,0 +1,14 @@
+.Badge001 {
+  display: inline-block;
+  line-height: 26px;
+  height: 26px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0 12px;
+  color: #ffffff;
+  vertical-align: top;
+  background: #e40909;
+  &.m_BgColorGray {
+    background: #777777;
+  }
+}
