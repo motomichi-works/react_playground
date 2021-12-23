@@ -1,26 +1,26 @@
 import * as yup from 'yup';
 
 const REG_EXP_ZENKAKU_KATAKANA = new RegExp(
-  '[アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヰヱヲンヴガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポァィゥェォッャュョヮヵヶー 　]',
+  '[アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヰヱヲンヴガギグゲゴザジズゼゾダヂヅデドバビブベボパピプペポァィゥェォッャュョヮヵヶー０１２３４５６７８９0123456789 　]',
 );
 
 const validationSchema = yup
   .object({
     lastNameKana: yup
       .string()
-      .required('姓(カナ)を入力してください。')
+      .required('姓（カナ）を入力してください。')
       .matches(REG_EXP_ZENKAKU_KATAKANA, {
-        message: '姓(カナ)は全角カタカナで入力してください。',
+        message: '姓（カナ）に使用できない文字が含まれています。',
       }),
     firstNameKana: yup
       .string()
-      .required('名(カナ)を入力してください。')
+      .required('名（カナ）を入力してください。')
       .matches(REG_EXP_ZENKAKU_KATAKANA, {
-        message: '名(カナ)は全角カタカナで入力してください。',
+        message: '名（カナ）に使用できない文字が含まれています。',
       }),
     fullName: yup
       .string()
-      .max(20, '姓(カナ)と名(カナ)は合計20文字以内で入力してください。'),
+      .max(20, 'お名前（カナ）は合計20文字以内で入力してください。'),
     selectSample: yup.string().required('セレクトサンプルを選択してください。'),
     radioSample: yup.string().required('ラジオサンプルを選択してください。'),
     checkboxSample: yup
