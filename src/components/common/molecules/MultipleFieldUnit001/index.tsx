@@ -24,7 +24,22 @@ const MultipleFieldUnit001: React.FC<Props> = ({
   combinationItem,
   descriptions,
 }) => {
-  // NOTE: エラーメッセージはあっても、フィールドがtouchedでないと表示はしません。
+  // NOTE: 表示するかしないかにかかわらず、エラーメッセージがあれば配列に格納します。
+  const itemsErrorMessages: string[] = [];
+  items.forEach((item) => {
+    if (item.errorMessage !== undefined) {
+      itemsErrorMessages.push(item.errorMessage);
+    }
+  });
+
+  const combinationItemErrorMessages: string[] = [];
+  if (combinationItem?.errorMessage !== undefined) {
+    combinationItemErrorMessages.push(combinationItem.errorMessage);
+  }
+
+  // NOTE:
+  // エラーメッセージを表示するかしないかのフラグです。
+  // エラーメッセージはあっても、フィールドがtouchedでないと表示はしません。
   const isVisibleItemsErrorMessage = items.some(
     (item) => item.isVisibleErrorMessage,
   );
@@ -32,14 +47,6 @@ const MultipleFieldUnit001: React.FC<Props> = ({
     combinationItem?.isVisibleErrorMessage;
   const isVisibleErrorMessage =
     isVisibleItemsErrorMessage || isVisibleCombinationItemErrorMessage;
-
-  // NOTE: 表示するかしないかにかかわらず配列に格納します。
-  const itemsErrorMessages = isVisibleItemsErrorMessage
-    ? items.map((item) => item.errorMessage)
-    : [];
-  const combinationItemErrorMessages = isVisibleCombinationItemErrorMessage
-    ? [combinationItem?.errorMessage]
-    : [];
 
   return (
     <div

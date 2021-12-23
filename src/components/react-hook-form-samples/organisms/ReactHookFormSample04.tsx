@@ -83,7 +83,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
           items={[
             {
               field: <TextLikeField001 {...fieldProps.lastNameKana} />,
-              subHeading: 'セイ',
+              subHeading: '姓（カナ）',
               isVisibleErrorMessage:
                 touchedFields !== undefined &&
                 touchedFields.lastNameKana === true &&
