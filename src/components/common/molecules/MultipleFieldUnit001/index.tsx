@@ -47,20 +47,24 @@ const MultipleFieldUnit001: React.FC<Props> = ({
       data-adj="MultipleFieldUnit001"
     >
       <ul className={styles.Row}>
-        {items.map((item) => (
-          <div className={styles.Column}>
-            <label className={styles.SubHeading} htmlFor="hoge">
-              {item.subHeading}
-            </label>
-            <div className={styles.MainContents}>{item.field}</div>
-          </div>
-        ))}
+        {items.map((item, index) => {
+          const key = `key${index}`;
+
+          return (
+            <div className={styles.Column} key={key}>
+              <label className={styles.SubHeading} htmlFor="hoge">
+                {item.subHeading}
+              </label>
+              <div className={styles.MainContents}>{item.field}</div>
+            </div>
+          );
+        })}
       </ul>
       {descriptions && (
         <div className={styles.DescriptionsWrapper}>
           <ul>
             {descriptions.map((description) => (
-              <li>{description}</li>
+              <li key={description}>{description}</li>
             ))}
           </ul>
         </div>
@@ -69,13 +73,13 @@ const MultipleFieldUnit001: React.FC<Props> = ({
         <ul>
           {isVisibleItemsErrorMessage &&
             itemsErrorMessages.map((message) => (
-              <li>
+              <li key={message}>
                 <FieldErrorMessage message={message} />
               </li>
             ))}
           {isVisibleCombinationItemErrorMessage &&
             combinationItemErrorMessages.map((message) => (
-              <li>
+              <li key={message}>
                 <FieldErrorMessage message={message} />
               </li>
             ))}
