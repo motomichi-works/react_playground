@@ -83,7 +83,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
           items={[
             {
               field: <TextLikeField001 {...fieldProps.lastNameKana} />,
-              label: 'セイ',
+              subHeading: 'セイ',
               isVisibleErrorMessage:
                 touchedFields !== undefined &&
                 touchedFields.lastNameKana === true &&
@@ -92,7 +92,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
             },
             {
               field: <TextLikeField001 {...fieldProps.firstNameKana} />,
-              label: 'メイ',
+              subHeading: 'メイ',
               isVisibleErrorMessage:
                 touchedFields !== undefined &&
                 touchedFields.firstNameKana === true &&
@@ -109,6 +109,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
               errors.fullName !== undefined,
             errorMessage: errors.fullName?.message,
           }}
+          descriptions={['全角カタカナ、全角数字、半角数字が使用できます。']}
         />
 
         <FieldHeading001 text="セレクトサンプル" badgeType="required" />

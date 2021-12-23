@@ -1,3 +1,5 @@
+@import 'styles/shared/index';
+
 .MultipleFieldUnit001 {
   display: block;
 }
@@ -13,4 +15,9 @@
 
 .Column + .Column {
   margin-left: 12px;
+}
+
+.SubHeading {
+  color: #777777;
+  font-size: px_to_rem(14);
 }

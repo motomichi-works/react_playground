@@ -4,7 +4,7 @@ import styles from './index.module.scss';
 
 type Item = {
   field: JSX.Element;
-  label?: string;
+  subHeading?: string;
   isVisibleErrorMessage?: boolean;
   errorMessage?: string;
 };
@@ -16,9 +16,14 @@ type Props = {
     isVisibleErrorMessage?: boolean;
     errorMessage?: string;
   };
+  descriptions?: string[];
 };
 
-const MultipleFieldUnit001: React.FC<Props> = ({ items, combinationItem }) => {
+const MultipleFieldUnit001: React.FC<Props> = ({
+  items,
+  combinationItem,
+  descriptions,
+}) => {
   // NOTE: エラーメッセージはあっても、フィールドがtouchedでないと表示はしません。
   const isVisibleItemsErrorMessage = items.some(
     (item) => item.isVisibleErrorMessage,
@@ -44,21 +49,22 @@ const MultipleFieldUnit001: React.FC<Props> = ({ items, combinationItem }) => {
       <ul className={styles.Row}>
         {items.map((item) => (
           <div className={styles.Column}>
-            <label className={styles.Label} htmlFor="hoge">
-              {item.label}
+            <label className={styles.SubHeading} htmlFor="hoge">
+              {item.subHeading}
             </label>
             <div className={styles.MainContents}>{item.field}</div>
           </div>
         ))}
       </ul>
-      <ul className={styles.Descriptions}>
-        <li>
-          説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文
-        </li>
-        <li>
-          説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文説明文
-        </li>
-      </ul>
+      {descriptions && (
+        <div className={styles.DescriptionsWrapper}>
+          <ul>
+            {descriptions.map((description) => (
+              <li>{description}</li>
+            ))}
+          </ul>
+        </div>
+      )}
       {isVisibleErrorMessage && (
         <ul>
           {isVisibleItemsErrorMessage &&
