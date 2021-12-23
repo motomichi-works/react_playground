@@ -77,20 +77,20 @@ const MultipleFieldUnit001: React.FC<Props> = ({
         </div>
       )}
       {isVisibleErrorMessage && (
-        <ul>
-          {isVisibleItemsErrorMessage &&
-            itemsErrorMessages.map((message) => (
-              <li key={message}>
-                <FieldErrorMessage message={message} />
-              </li>
-            ))}
-          {isVisibleCombinationItemErrorMessage &&
-            combinationItemErrorMessages.map((message) => (
-              <li key={message}>
-                <FieldErrorMessage message={message} />
-              </li>
-            ))}
-        </ul>
+        <div>
+          {items.map(
+            (item) =>
+              item.isVisibleErrorMessage && (
+                <FieldErrorMessage
+                  key={item.errorMessage}
+                  message={item.errorMessage}
+                />
+              ),
+          )}
+          {isVisibleCombinationItemErrorMessage && (
+            <FieldErrorMessage message={combinationItem?.errorMessage} />
+          )}
+        </div>
       )}
     </div>
   );
