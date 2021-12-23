@@ -1,15 +1,15 @@
 [data-adj="FieldHeading001"] + [data-adj="FieldUnit001"] {
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 // [data-adj="FieldHeading001"]のスタイル
 [data-adj="MultipleFieldUnit001"] + [data-adj="FieldHeading001"],
 [data-adj="FieldUnit001"] + [data-adj="FieldHeading001"] {
-  margin-top: 48px;
+  margin-top: 56px;
 }
 
 // [data-adj="MultipleFieldUnit001"]のスタイル
 [data-adj="FieldHeading001"] + [data-adj="MultipleFieldUnit001"] {
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
