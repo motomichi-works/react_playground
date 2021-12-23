@@ -1,10 +1,11 @@
 import { FieldErrors } from 'react-hook-form';
 import OrganismFrame001 from 'components/common/molecules/OrganismFrame001';
-import FieldErrorMessage from 'components/common/molecules/FieldErrorMessage';
 import FieldUnit001 from 'components/common/molecules/FieldUnit001';
 import FieldHeading001 from 'components/common/molecules/FieldHeading001';
 import Frame001 from 'components/common/molecules/Frame001';
 import List002, { Items } from 'components/common/molecules/List002';
+import MultipleFieldUnit001 from 'components/common/molecules/MultipleFieldUnit001';
+
 import CheckboxField001, {
   CheckboxFieldProps,
 } from 'components/common/molecules/CheckboxField001';
@@ -77,22 +78,38 @@ const ReactHookFormSample04: React.VFC<Props> = ({
   return (
     <OrganismFrame001 sectionHeadingText="業務を想定して設計する">
       <Frame001 headingText="Demo">
-        <FieldHeading001 text="姓（カナ）" />
-        <TextLikeField001 {...fieldProps.lastNameKana} />
-        {touchedFields?.lastNameKana && (
-          <FieldErrorMessage message={errors.lastNameKana?.message} />
-        )}
-
-        <FieldHeading001 text="名（カナ）" />
-        <TextLikeField001 {...fieldProps.firstNameKana} />
-        {touchedFields?.firstNameKana && (
-          <FieldErrorMessage message={errors.firstNameKana?.message} />
-        )}
-
-        <HiddenField001 {...fieldProps.fullName} />
-        {touchedFields?.lastNameKana && touchedFields?.firstNameKana && (
-          <FieldErrorMessage message={errors.fullName?.message} />
-        )}
+        <FieldHeading001 text="お名前（カナ）" badgeType="required" />
+        <MultipleFieldUnit001
+          items={[
+            {
+              field: <TextLikeField001 {...fieldProps.lastNameKana} />,
+              label: 'セイ',
+              isVisibleErrorMessage:
+                touchedFields !== undefined &&
+                touchedFields.lastNameKana === true &&
+                errors.lastNameKana !== undefined,
+              errorMessage: errors.lastNameKana?.message,
+            },
+            {
+              field: <TextLikeField001 {...fieldProps.firstNameKana} />,
+              label: 'メイ',
+              isVisibleErrorMessage:
+                touchedFields !== undefined &&
+                touchedFields.firstNameKana === true &&
+                errors.firstNameKana !== undefined,
+              errorMessage: errors.firstNameKana?.message,
+            },
+          ]}
+          combinationItem={{
+            field: <HiddenField001 {...fieldProps.fullName} />,
+            isVisibleErrorMessage:
+              touchedFields !== undefined &&
+              touchedFields.lastNameKana === true &&
+              touchedFields.firstNameKana === true &&
+              errors.fullName !== undefined,
+            errorMessage: errors.fullName?.message,
+          }}
+        />
 
         <FieldHeading001 text="セレクトサンプル" badgeType="required" />
         <FieldUnit001

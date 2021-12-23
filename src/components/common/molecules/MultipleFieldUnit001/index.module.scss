@@ -1,0 +1,16 @@
+.MultipleFieldUnit001 {
+  display: block;
+}
+
+.Row {
+  display: flex;
+  width: 100%;
+}
+
+.Column {
+  flex: auto 1 1;
+}
+
+.Column + .Column {
+  margin-left: 12px;
+}

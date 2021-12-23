@@ -2,6 +2,14 @@
   margin-top: 12px;
 }
 
+// [data-adj="FieldHeading001"]のスタイル
+[data-adj="MultipleFieldUnit001"] + [data-adj="FieldHeading001"],
 [data-adj="FieldUnit001"] + [data-adj="FieldHeading001"] {
   margin-top: 48px;
 }
+
+// [data-adj="MultipleFieldUnit001"]のスタイル
+[data-adj="FieldHeading001"] + [data-adj="MultipleFieldUnit001"] {
+  margin-top: 12px;
+}
+
