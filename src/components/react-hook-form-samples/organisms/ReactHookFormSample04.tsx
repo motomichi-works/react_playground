@@ -144,11 +144,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
               ]}
             />
           }
-          isVisibleErrorMessage={
-            touchedFields !== undefined &&
-            touchedFields.radioSample === true &&
-            errors.radioSample !== undefined
-          }
+          isVisibleErrorMessage={errors.radioSample !== undefined}
           errorMessage={errors.radioSample?.message}
         />
 
@@ -161,11 +157,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
               label="チェックボックスサンプル"
             />
           }
-          isVisibleErrorMessage={
-            touchedFields !== undefined &&
-            touchedFields.checkboxSample === true &&
-            errors.checkboxSample !== undefined
-          }
+          isVisibleErrorMessage={errors.checkboxSample !== undefined}
           errorMessage={errors.checkboxSample?.message}
         />
 
