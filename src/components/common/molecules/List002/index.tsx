@@ -11,7 +11,7 @@ type Props = {
 };
 
 const List002: React.FC<Props> = ({ items }) => (
-  <ul className={styles.List002} data-adjacent-id="List002">
+  <ul className={styles.List002} data-adj="List002">
     {items.map((ItemInnerElements, i) => (
       <li
         className={styles.Item}

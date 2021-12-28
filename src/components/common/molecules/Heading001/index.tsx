@@ -12,7 +12,7 @@ const Heading001: React.VFC<Props> = ({ text, modifierClassNames = [] }) => {
   return (
     <h2
       className={[styles.Heading001, ...modifiers].join(' ')}
-      data-adjacent-id={['Heading001', ...modifierClassNames].join(' ')}
+      data-adj={['Heading001', ...modifierClassNames].join(' ')}
     >
       {text}
     </h2>

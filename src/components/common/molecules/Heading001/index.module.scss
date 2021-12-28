@@ -25,7 +25,7 @@
 }
 
 // 隣接要素セレクタによるマージン
-[data-adjacent-id='List001'] + [data-adjacent-id*='Heading001'][data-adjacent-id*='m_Lv4'],
-[data-adjacent-id='List002'] + [data-adjacent-id*='Heading001'][data-adjacent-id*='m_Lv4'] {
+[data-adj='List001'] + [data-adj*='Heading001'][data-adj*='m_Lv4'],
+[data-adj='List002'] + [data-adj*='Heading001'][data-adj*='m_Lv4'] {
   margin-top: 16px;
 }
