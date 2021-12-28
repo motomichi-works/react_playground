@@ -203,7 +203,7 @@ const ReactHookFormSample01: React.VFC<Props> = ({
   ];
 
   return (
-    <OrganismFrame001 sectionHeadingText="基本的な使用法">
+    <OrganismFrame001 sectionHeadingText="基本的な使用方法">
       <Frame001 headingText="Demo">
         <div>
           {/* register your input into the hook by invoking the "register" function */}

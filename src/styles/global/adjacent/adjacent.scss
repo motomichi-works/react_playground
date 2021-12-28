@@ -1,3 +1,4 @@
+// [data-adj="FieldUnit001"]のスタイル
 [data-adj="FieldHeading001"] + [data-adj="FieldUnit001"] {
   margin-top: 8px;
 }
@@ -13,3 +14,7 @@
   margin-top: 8px;
 }
 
+// [data-adj="PageLead"]のスタイル
+[data-adj="PageHeading"] + [data-adj="PageLead"] {
+  margin-top: 40px;
+}

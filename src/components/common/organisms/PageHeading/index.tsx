@@ -5,7 +5,9 @@ type Props = {
 };
 
 const PageHeading: React.VFC<Props> = ({ text }) => (
-  <h1 className={styles.PageHeading}>{text}</h1>
+  <h1 className={styles.PageHeading} data-adj="PageHeading">
+    {text}
+  </h1>
 );
 
 export default PageHeading;

@@ -1,18 +1,18 @@
 import styles from './index.module.scss';
 
-export type Items = {
+export type PageLeadItems = {
   tagName: 'div' | 'span' | 'code' | 'pre' | 'a';
   content: string;
   href?: string;
 }[][];
 
-type Props = {
-  items: Items;
+type PageLeadProps = {
+  pageLeadItems: PageLeadItems;
 };
 
-const List002: React.FC<Props> = ({ items }) => (
-  <ul className={styles.List002} data-adjacent-id="List002">
-    {items.map((ItemInnerElements, i) => (
+const PageLead: React.FC<PageLeadProps> = ({ pageLeadItems }) => (
+  <ul className={styles.PageLead} data-adj="PageLead">
+    {pageLeadItems.map((ItemInnerElements, i) => (
       <li
         className={styles.Item}
         key={`${JSON.stringify(ItemInnerElements)}${String(i)}`}
@@ -32,4 +32,4 @@ const List002: React.FC<Props> = ({ items }) => (
   </ul>
 );
 
-export default List002;
+export default PageLead;

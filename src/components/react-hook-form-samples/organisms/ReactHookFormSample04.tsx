@@ -76,7 +76,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
   ];
 
   return (
-    <OrganismFrame001 sectionHeadingText="業務を想定して設計する">
+    <OrganismFrame001 sectionHeadingText="業務を想定した設計をする">
       <Frame001 headingText="Demo">
         <FieldHeading001 text="お名前（カナ）" badgeType="required" />
         <MultipleFieldUnit001
