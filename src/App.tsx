@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import paths from 'settings/paths';
 import ExamplesAppClone from 'containers/ExamplesAppClone';
 import ExamplesHoge from 'containers/ExamplesHoge';
+import NotFound from 'containers/NotFound';
 import Home from 'containers/Home';
 import ReactHookFormSamples from 'containers/ReactHookFormSamples';
 import RiakutoChapter08 from 'containers/RiakutoChapter08';
@@ -22,6 +23,7 @@ const App: React.FC = () => (
       <Route exact path={paths.riakutoChapter08} component={RiakutoChapter08} />
       <Route exact path={paths.riakutoChapter09} component={RiakutoChapter09} />
       <Route exact path={paths.riakutoChapter11} component={RiakutoChapter11} />
+      <Route component={NotFound} />
     </Switch>
   </Router>
 );
