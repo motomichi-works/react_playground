@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import paths from 'settings/paths';
 import ExamplesAppClone from 'containers/ExamplesAppClone';
 import ExamplesHoge from 'containers/ExamplesHoge';
+import FontAwesome5 from 'containers/FontAwesome5';
 import NotFound from 'containers/NotFound';
 import Home from 'containers/Home';
 import ReactHookFormSamples from 'containers/ReactHookFormSamples';
@@ -15,6 +16,7 @@ const App: React.FC = () => (
       <Route exact path={paths.home} component={Home} />
       <Route exact path={paths.examplesAppClone} component={ExamplesAppClone} />
       <Route exact path={paths.examplesHoge} component={ExamplesHoge} />
+      <Route exact path={paths.fontAwesome5} component={FontAwesome5} />
       <Route
         exact
         path={paths.reactHookFormSamples}

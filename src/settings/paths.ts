@@ -2,6 +2,7 @@ const paths = {
   home: '/',
   examplesAppClone: '/examples-app-clone',
   examplesHoge: '/examples-hoge',
+  fontAwesome5: '/font-awesome5',
   reactHookFormSamples: '/react-hook-form-samples',
   riakutoChapter08: '/riakuto-chapter08',
   riakutoChapter09: '/riakuto-chapter09',
