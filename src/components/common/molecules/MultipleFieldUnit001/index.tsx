@@ -53,31 +53,36 @@ const MultipleFieldUnit001: React.FC<Props> = ({
       className={styles.MultipleFieldUnit001}
       data-adj="MultipleFieldUnit001"
     >
-      <ul className={styles.Row}>
-        {items.map((item, index) => {
-          const key = `key${index}`;
+      <div className={styles.MainContentsFrame}>
+        <ul className={styles.Row}>
+          {items.map((item, index) => {
+            const key = `key${index}`;
 
-          return (
-            <div className={styles.Column} key={key}>
-              <label className={styles.SubHeading} htmlFor="hoge">
-                {item.subHeading}
-              </label>
-              <div className={styles.MainContents}>{item.field}</div>
-            </div>
-          );
-        })}
-      </ul>
-      {descriptions && (
-        <div className={styles.DescriptionsWrapper}>
-          <ul>
-            {descriptions.map((description) => (
-              <li key={description}>{description}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+            // TODO: htmlForの値をちゃんとする
+            return (
+              <div className={styles.Column} key={key}>
+                {item.subHeading && (
+                  <label className={styles.SubHeading} htmlFor="hoge">
+                    {item.subHeading}
+                  </label>
+                )}
+                <div className={styles.MainContents}>{item.field}</div>
+              </div>
+            );
+          })}
+        </ul>
+        {descriptions && (
+          <div className={styles.DescriptionsWrapper}>
+            <ul>
+              {descriptions.map((description) => (
+                <li key={description}>{description}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
       {isVisibleErrorMessage && (
-        <div>
+        <div className={styles.ErrorMessageWrapper}>
           {items.map(
             (item) =>
               item.isVisibleErrorMessage && (

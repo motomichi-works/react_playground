@@ -43,8 +43,18 @@ const TextLikeField001 = React.forwardRef<HTMLInputElement, TextLikeFieldProps>(
     } = props;
 
     return (
-      <div className={styles.TextLikeField001}>
-        {leftIcon && <FontAwesomeIcon icon={leftIcon} />}
+      <div
+        className={[
+          styles.TextLikeField001,
+          styles.m_IconAbsoluteLeft,
+          styles.m_IconAbsoluteRight,
+        ].join(' ')}
+      >
+        {leftIcon && (
+          <div className={styles.IconWrapper}>
+            <FontAwesomeIcon icon={leftIcon} />
+          </div>
+        )}
         <input
           className={styles.Field}
           type={typeProperty}
@@ -55,7 +65,11 @@ const TextLikeField001 = React.forwardRef<HTMLInputElement, TextLikeFieldProps>(
           onCompositionEnd={handleComposition}
           onCompositionStart={handleComposition}
         />
-        {rightIcon && <FontAwesomeIcon icon={rightIcon} />}
+        {rightIcon && (
+          <div className={styles.IconWrapper}>
+            <FontAwesomeIcon icon={rightIcon} />
+          </div>
+        )}
       </div>
     );
   },

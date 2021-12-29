@@ -4,6 +4,12 @@
   display: block;
 }
 
+.MainContentsFrame {
+  padding: 8px;
+  background-color: #dddddd;
+  border-radius: 4px;
+}
+
 .Row {
   display: flex;
   width: 100%;
@@ -20,4 +26,8 @@
 .SubHeading {
   color: #222222;
   font-size: px_to_rem(14);
+}
+
+.ErrorMessageWrapper {
+  margin-top: 8px;
 }
