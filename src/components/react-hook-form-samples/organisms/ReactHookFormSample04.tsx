@@ -28,6 +28,7 @@ import {
   FormValues,
   FieldNameStrings,
 } from 'containers/ReactHookFormSamples/validation-schema';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 type Props = {
   errors: FieldErrors<FormValues>;
@@ -82,7 +83,13 @@ const ReactHookFormSample04: React.VFC<Props> = ({
         <MultipleFieldUnit001
           items={[
             {
-              field: <TextLikeField001 {...fieldProps.lastNameKana} />,
+              field: (
+                <TextLikeField001
+                  {...fieldProps.lastNameKana}
+                  leftIcon={faSearch}
+                  rightIcon={faSearch}
+                />
+              ),
               subHeading: '姓（カナ）',
               isVisibleErrorMessage:
                 touchedFields !== undefined &&
@@ -91,7 +98,13 @@ const ReactHookFormSample04: React.VFC<Props> = ({
               errorMessage: errors.lastNameKana?.message,
             },
             {
-              field: <TextLikeField001 {...fieldProps.firstNameKana} />,
+              field: (
+                <TextLikeField001
+                  {...fieldProps.firstNameKana}
+                  leftIcon={faSearch}
+                  rightIcon={faSearch}
+                />
+              ),
               subHeading: '名（カナ）',
               isVisibleErrorMessage:
                 touchedFields !== undefined &&

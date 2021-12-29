@@ -1,5 +1,7 @@
 import React from 'react';
 import { RefCallBack } from 'react-hook-form';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import styles from './index.module.scss';
 
 type EventHandler = ({
@@ -24,6 +26,8 @@ export type TextLikeFieldProps = {
   ref: RefCallBack;
   typeProperty?: 'text' | 'tel';
   placeholder?: string;
+  leftIcon?: IconDefinition;
+  rightIcon?: IconDefinition;
 };
 
 const TextLikeField001 = React.forwardRef<HTMLInputElement, TextLikeFieldProps>(
@@ -34,10 +38,13 @@ const TextLikeField001 = React.forwardRef<HTMLInputElement, TextLikeFieldProps>(
       handleComposition,
       name,
       typeProperty = 'text',
+      leftIcon,
+      rightIcon,
     } = props;
 
     return (
       <div className={styles.TextLikeField001}>
+        {leftIcon && <FontAwesomeIcon icon={leftIcon} />}
         <input
           className={styles.Field}
           type={typeProperty}
@@ -48,6 +55,7 @@ const TextLikeField001 = React.forwardRef<HTMLInputElement, TextLikeFieldProps>(
           onCompositionEnd={handleComposition}
           onCompositionStart={handleComposition}
         />
+        {rightIcon && <FontAwesomeIcon icon={rightIcon} />}
       </div>
     );
   },
