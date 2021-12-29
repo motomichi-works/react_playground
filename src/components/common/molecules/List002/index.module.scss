@@ -5,12 +5,17 @@
 .Item {
   position: relative;
   padding-left: 1em;
+  overflow-wrap: break-word;
 
   &::before {
     position: absolute;
     top: 0;
     left: 0;
     content: '・';
+  }
+
+  > pre {
+    overflow: auto;
   }
 
   code + span { margin-left: 4px; }
