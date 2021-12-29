@@ -122,7 +122,31 @@ const ReactHookFormSample04: React.VFC<Props> = ({
               errors.fullName !== undefined,
             errorMessage: errors.fullName?.message,
           }}
-          descriptions={['全角カタカナ、全角数字、半角数字が使用できます。']}
+          fieldDescriptionItems={[
+            [
+              {
+                tagName: 'div',
+                content: '全角カタカナ、全角数字、半角数字が使用できます。',
+              },
+            ],
+            [
+              {
+                tagName: 'div',
+                content: '合計20文字以内で入力してください。',
+              },
+            ],
+            [
+              {
+                tagName: 'a',
+                content: 'リンク',
+                href: 'http://example.com',
+              },
+              {
+                tagName: 'span',
+                content: 'も入れられます',
+              },
+            ],
+          ]}
         />
 
         <FieldHeading001 text="セレクトサンプル" badgeType="required" />

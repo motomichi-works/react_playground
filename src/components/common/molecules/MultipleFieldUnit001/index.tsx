@@ -1,3 +1,6 @@
+import FieldDescriptions, {
+  FieldDescriptionItems,
+} from 'components/common/molecules/FieldDescriptions001';
 import FieldErrorMessage from 'components/common/molecules/FieldErrorMessage';
 
 import styles from './index.module.scss';
@@ -16,13 +19,13 @@ type Props = {
     isVisibleErrorMessage?: boolean;
     errorMessage?: string;
   };
-  descriptions?: string[];
+  fieldDescriptionItems?: FieldDescriptionItems;
 };
 
 const MultipleFieldUnit001: React.FC<Props> = ({
   items,
   combinationItem,
-  descriptions,
+  fieldDescriptionItems,
 }) => {
   // NOTE: 表示するかしないかにかかわらず、エラーメッセージがあれば配列に格納します。
   const itemsErrorMessages: string[] = [];
@@ -71,13 +74,9 @@ const MultipleFieldUnit001: React.FC<Props> = ({
             );
           })}
         </ul>
-        {descriptions && (
+        {fieldDescriptionItems && (
           <div className={styles.DescriptionsWrapper}>
-            <ul>
-              {descriptions.map((description) => (
-                <li key={description}>{description}</li>
-              ))}
-            </ul>
+            <FieldDescriptions fieldDescriptionItems={fieldDescriptionItems} />
           </div>
         )}
       </div>
