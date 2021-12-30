@@ -28,7 +28,8 @@ const validationSchema = yup
       .matches(/on/, 'チェックボックスサンプルをチェックしてください。'),
     textAreaSample: yup
       .string()
-      .required('テキストエリアサンプルを入力してください。'),
+      .required('テキストエリアサンプルを入力してください。')
+      .max(1000, 'テキストエリアサンプルは1000文字以内で入力してください。'),
   })
   .required();
 
