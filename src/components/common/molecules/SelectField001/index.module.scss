@@ -1,8 +1,67 @@
 .SelectField001 {
   position: relative;
+  font-size: 16px;
+
+  &.m_Disabled {
+    i.fa {
+      color: #cccccc;
+    }
+  }
+
+  &.m_Red {
+    .Field {
+      border-color: #ff0000;
+      background: #ffeeee;
+    }
+  }
 }
 
 .Field {
+  appearance: none;
   display: block;
   width: 100%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #444444;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #222222;
+  border-radius: 4px;
+  height: 44px;
+  padding-left: 44px;
+  font-size: 16px;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 6px 0 #0000ff inset;
+  }
+
+  &:disabled {
+    // NOTE: !importantは原則として使用禁止です。ボタンとフィールドのdisabled、readonlyにだけ使用しています。
+    background: #eeeeee !important;
+    border-color: #cccccc !important;
+    color: #cccccc;
+    cursor: default;
+  }
+}
+
+.IconWrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  color: #222222;
+  pointer-events: none;
+  left: 16px;
+}
+
+.Icon {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: #444444 transparent transparent transparent;
+  border-width: 9.6px 8px 0 8px;
 }

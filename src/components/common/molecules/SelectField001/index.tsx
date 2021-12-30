@@ -21,14 +21,22 @@ export type SelectFieldProps = {
   name: string;
   ref: RefCallBack;
   choices: Choice[];
+  isRed?: boolean;
 };
 
 const SelectField001 = React.forwardRef<HTMLSelectElement, SelectFieldProps>(
   (props, ref) => {
-    const { name = '', choices, handleBlur, handleChange } = props;
+    const { name = '', choices, handleBlur, handleChange, isRed } = props;
+
+    const modifiers: string[] = [];
+
+    if (isRed) modifiers.push(styles.m_Red);
 
     return (
-      <div className={styles.SelectField001}>
+      <div className={[styles.SelectField001, ...modifiers].join(' ')}>
+        <i className={styles.IconWrapper}>
+          <div className={styles.Icon} />
+        </i>
         <select
           className={styles.Field}
           name={name}
