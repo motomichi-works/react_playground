@@ -174,7 +174,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
             <RadioField001
               {...fieldProps.radioSample}
               choices={[
-                { label: '何も選択しない', value: '' },
+                { label: 'valueが空文字列のラジオボタン', value: '' },
                 { label: 'Radioタグ選択肢1', value: 'radioTagChoice1' },
                 { label: 'Radioタグ選択肢2', value: 'radioTagChoice2' },
               ]}

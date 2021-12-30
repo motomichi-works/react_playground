@@ -22,7 +22,10 @@ const validationSchema = yup
       .string()
       .max(20, 'お名前（カナ）は合計20文字以内で入力してください。'),
     selectSample: yup.string().required('セレクトサンプルを選択してください。'),
-    radioSample: yup.string().required('ラジオサンプルを選択してください。'),
+    radioSample: yup
+      .string()
+      .required('valueが空文字列のラジオボタンは選択できません。')
+      .matches(/[^radioTagChoice1]/, 'Radioタグ選択肢1は選択できません。'),
     checkboxSample: yup
       .string()
       .matches(/on/, 'チェックボックスサンプルをチェックしてください。'),
