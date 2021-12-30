@@ -28,7 +28,6 @@ import {
   FormValues,
   FieldNameStrings,
 } from 'containers/ReactHookFormSamples/validation-schema';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 type Props = {
   errors: FieldErrors<FormValues>;
@@ -102,8 +101,6 @@ const ReactHookFormSample04: React.VFC<Props> = ({
               field: (
                 <TextLikeField001
                   {...fieldProps.lastNameKana}
-                  leftIcon={faSearch}
-                  rightIcon={faSearch}
                   isRed={
                     isVisibleLastNameKanaErrorMessage ||
                     isVisibleFullNameKanaErrorMessage
@@ -118,8 +115,6 @@ const ReactHookFormSample04: React.VFC<Props> = ({
               field: (
                 <TextLikeField001
                   {...fieldProps.firstNameKana}
-                  leftIcon={faSearch}
-                  rightIcon={faSearch}
                   isRed={
                     isVisibleFirstNameKanaErrorMessage ||
                     isVisibleFullNameKanaErrorMessage
