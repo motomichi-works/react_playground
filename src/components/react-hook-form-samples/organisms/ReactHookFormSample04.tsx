@@ -198,13 +198,36 @@ const ReactHookFormSample04: React.VFC<Props> = ({
 
         <FieldHeading001 text="テキストエリアサンプル" badgeType="required" />
         <FieldUnit001
-          field={<TextAreaField001 {...fieldProps.textAreaSample} />}
+          field={
+            <TextAreaField001
+              {...fieldProps.textAreaSample}
+              isRed={
+                touchedFields !== undefined &&
+                touchedFields.textAreaSample === true &&
+                errors.textAreaSample !== undefined
+              }
+            />
+          }
           isVisibleErrorMessage={
             touchedFields !== undefined &&
             touchedFields.textAreaSample === true &&
             errors.textAreaSample !== undefined
           }
           errorMessage={errors.textAreaSample?.message}
+          fieldDescriptionItems={[
+            [
+              {
+                tagName: 'div',
+                content: '1000文字以内で入力してください。',
+              },
+            ],
+            [
+              {
+                tagName: 'div',
+                content: '改行やスペースも1文字として計算されます。',
+              },
+            ],
+          ]}
         />
 
         <input type="submit" />

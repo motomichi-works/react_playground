@@ -19,16 +19,23 @@ export type TextAreaFieldProps = {
   }: CompositionEvent<HTMLTextAreaElement>) => void;
   name: string;
   ref: RefCallBack;
+  isRed?: boolean;
 };
 
 const TextAreaField001 = React.forwardRef<
   HTMLTextAreaElement,
   TextAreaFieldProps
 >((props, ref) => {
-  const { handleBlur, handleChange, handleComposition, name } = props;
+  const { handleBlur, handleChange, handleComposition, name, isRed } = props;
+
+  const modifiers: string[] = [];
+  if (isRed) modifiers.push(styles.m_Red);
 
   return (
-    <div className={styles.TextAreaField001} data-adj="TextAreaField001">
+    <div
+      className={[styles.TextAreaField001, ...modifiers].join(' ')}
+      data-adj="TextAreaField001"
+    >
       <textarea
         className={styles.Field}
         name={name}
