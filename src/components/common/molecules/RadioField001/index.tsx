@@ -21,14 +21,19 @@ export type RadioFieldProps = {
   name: string;
   choices: Choice[];
   ref: RefCallBack;
+  isRed?: boolean;
 };
 
 const RadioField001 = React.forwardRef<HTMLInputElement, RadioFieldProps>(
   (props, ref) => {
-    const { handleBlur, handleChange, name, choices } = props;
+    const { handleBlur, handleChange, name, choices, isRed } = props;
+
+    const modifiers: string[] = [];
+
+    if (isRed) modifiers.push(styles.m_Red);
 
     return (
-      <div className={styles.RadioField001}>
+      <div className={[styles.RadioField001, ...modifiers].join(' ')}>
         {choices.map((choice) => (
           <div key={`${name}_${choice.value}`} className={styles.Item}>
             <input

@@ -178,6 +178,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
                 { label: 'Radioタグ選択肢1', value: 'radioTagChoice1' },
                 { label: 'Radioタグ選択肢2', value: 'radioTagChoice2' },
               ]}
+              isRed={errors.radioSample !== undefined}
             />
           }
           isVisibleErrorMessage={errors.radioSample !== undefined}
