@@ -11,6 +11,12 @@
       padding-right: 44px;
     }
   }
+  &.m_Red {
+    .Field {
+      border-color: #e40909;
+      background: #ffdddd;
+    }
+  }
 }
 
 .Field {

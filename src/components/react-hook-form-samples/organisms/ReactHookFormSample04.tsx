@@ -76,6 +76,22 @@ const ReactHookFormSample04: React.VFC<Props> = ({
     ],
   ];
 
+  const isVisibleLastNameKanaErrorMessage =
+    touchedFields !== undefined &&
+    touchedFields.lastNameKana === true &&
+    errors.lastNameKana !== undefined;
+
+  const isVisibleFirstNameKanaErrorMessage =
+    touchedFields !== undefined &&
+    touchedFields.firstNameKana === true &&
+    errors.firstNameKana !== undefined;
+
+  const isVisibleFullNameKanaErrorMessage =
+    touchedFields !== undefined &&
+    touchedFields.lastNameKana === true &&
+    touchedFields.firstNameKana === true &&
+    errors.fullName !== undefined;
+
   return (
     <OrganismFrame001 sectionHeadingText="業務を想定した設計をする">
       <Frame001 headingText="Demo">
@@ -88,13 +104,14 @@ const ReactHookFormSample04: React.VFC<Props> = ({
                   {...fieldProps.lastNameKana}
                   leftIcon={faSearch}
                   rightIcon={faSearch}
+                  isRed={
+                    isVisibleLastNameKanaErrorMessage ||
+                    isVisibleFullNameKanaErrorMessage
+                  }
                 />
               ),
               subHeading: '姓（カナ）',
-              isVisibleErrorMessage:
-                touchedFields !== undefined &&
-                touchedFields.lastNameKana === true &&
-                errors.lastNameKana !== undefined,
+              isVisibleErrorMessage: isVisibleLastNameKanaErrorMessage,
               errorMessage: errors.lastNameKana?.message,
             },
             {
@@ -103,23 +120,20 @@ const ReactHookFormSample04: React.VFC<Props> = ({
                   {...fieldProps.firstNameKana}
                   leftIcon={faSearch}
                   rightIcon={faSearch}
+                  isRed={
+                    isVisibleFirstNameKanaErrorMessage ||
+                    isVisibleFullNameKanaErrorMessage
+                  }
                 />
               ),
               subHeading: '名（カナ）',
-              isVisibleErrorMessage:
-                touchedFields !== undefined &&
-                touchedFields.firstNameKana === true &&
-                errors.firstNameKana !== undefined,
+              isVisibleErrorMessage: isVisibleFirstNameKanaErrorMessage,
               errorMessage: errors.firstNameKana?.message,
             },
           ]}
           combinationItem={{
             field: <HiddenField001 {...fieldProps.fullName} />,
-            isVisibleErrorMessage:
-              touchedFields !== undefined &&
-              touchedFields.lastNameKana === true &&
-              touchedFields.firstNameKana === true &&
-              errors.fullName !== undefined,
+            isVisibleErrorMessage: isVisibleFullNameKanaErrorMessage,
             errorMessage: errors.fullName?.message,
           }}
           fieldDescriptionItems={[
@@ -133,17 +147,6 @@ const ReactHookFormSample04: React.VFC<Props> = ({
               {
                 tagName: 'div',
                 content: '合計20文字以内で入力してください。',
-              },
-            ],
-            [
-              {
-                tagName: 'a',
-                content: 'リンク',
-                href: 'http://example.com',
-              },
-              {
-                tagName: 'span',
-                content: 'も入れられます',
               },
             ],
           ]}

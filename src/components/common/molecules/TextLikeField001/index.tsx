@@ -28,6 +28,7 @@ export type TextLikeFieldProps = {
   placeholder?: string;
   leftIcon?: IconDefinition;
   rightIcon?: IconDefinition;
+  isRed?: boolean;
 };
 
 const TextLikeField001 = React.forwardRef<HTMLInputElement, TextLikeFieldProps>(
@@ -40,16 +41,16 @@ const TextLikeField001 = React.forwardRef<HTMLInputElement, TextLikeFieldProps>(
       typeProperty = 'text',
       leftIcon,
       rightIcon,
+      isRed,
     } = props;
 
+    const modifiers: string[] = [];
+    if (leftIcon) modifiers.push(styles.m_IconAbsoluteLeft);
+    if (rightIcon) modifiers.push(styles.m_IconAbsoluteRight);
+    if (isRed) modifiers.push(styles.m_Red);
+
     return (
-      <div
-        className={[
-          styles.TextLikeField001,
-          styles.m_IconAbsoluteLeft,
-          styles.m_IconAbsoluteRight,
-        ].join(' ')}
-      >
+      <div className={[styles.TextLikeField001, ...modifiers].join(' ')}>
         {leftIcon && (
           <div className={styles.IconWrapper}>
             <FontAwesomeIcon icon={leftIcon} />
