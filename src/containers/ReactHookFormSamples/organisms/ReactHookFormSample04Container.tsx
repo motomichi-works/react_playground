@@ -29,7 +29,8 @@ const ReactHookFormSample04Container: React.VFC = () => {
       lastNameKana: '',
       firstNameKana: '',
       selectSample: '',
-      radioSample: '',
+      // NOTE: ラジオボタンの初期値は設定しません。
+      // radioSample: '',
       checkboxSample: '',
       textAreaSample: '',
     },
