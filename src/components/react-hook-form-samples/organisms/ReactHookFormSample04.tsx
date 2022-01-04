@@ -192,6 +192,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
               {...fieldProps.checkboxSample}
               value="on"
               label="チェックボックスサンプル"
+              isRed={errors.checkboxSample !== undefined}
             />
           }
           isVisibleErrorMessage={errors.checkboxSample !== undefined}

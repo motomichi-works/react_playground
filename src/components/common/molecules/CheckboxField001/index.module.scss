@@ -1,11 +1,74 @@
 .CheckboxField001 {
-  // empty
+  &.m_Red {
+    .Label {
+      border-color: #e40909;
+      background: #ffdddd;
+    }
+  }
+}
+
+.Item {
+  display: block;
+  position: relative;
 }
 
 .Field {
-  // empty
+  position: absolute;
+  top: 15px;
+  left: 15px;
 }
 
 .Label {
+  width: 100%;
+  display: block;
+  background: #ffffff;
+  font-size: 16px;
+  line-height: 26px;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #444444;
+  padding: 9px 0 9px 44px;
   cursor: pointer;
+
+  &:hover {
+    border-color: #aaaaaa;
+    &::before {
+      border-color: #ffa726;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    display: block;
+    border-radius: 4px;
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    left: 12px;
+    height: 20px;
+    width: 20px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #aaaaaa;
+    background-color: #ffffff;
+  }
+}
+
+.IconWrapper {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  display: none;
+  transform: translateY(-50%);
+  font-size: 16px;
+  margin-top: 1px;
+  color: #ffa726;
+}
+
+.Field:checked + .Label + .IconWrapper {
+  display: block;
 }
