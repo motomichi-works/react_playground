@@ -51,8 +51,8 @@ const ReactHookFormSample04Container: React.VFC = () => {
       nameProperty: 'firstNameKana',
       register,
     }),
-    fullName: useCombinationField<FormValues>({
-      nameProperty: 'fullName',
+    fullNameKana: useCombinationField<FormValues>({
+      nameProperty: 'fullNameKana',
       combinationFieldNames: ['lastNameKana', 'firstNameKana'],
       register,
       setValue,

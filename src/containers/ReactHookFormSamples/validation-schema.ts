@@ -18,7 +18,7 @@ const validationSchema = yup
       .matches(REG_EXP_ZENKAKU_KATAKANA, {
         message: '名（カナ）に使用できない文字が含まれています。',
       }),
-    fullName: yup
+    fullNameKana: yup
       .string()
       .max(20, 'お名前（カナ）は合計20文字以内で入力してください。'),
     selectSample: yup.string().required('セレクトサンプルを選択してください。'),
@@ -41,7 +41,7 @@ export default validationSchema;
 export const fieldNamesArray = [
   'firstNameKana',
   'lastNameKana',
-  'fullName',
+  'fullNameKana',
   'selectSample',
   'radioSample',
   'checkboxSample',

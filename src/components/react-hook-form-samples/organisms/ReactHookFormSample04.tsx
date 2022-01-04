@@ -35,7 +35,7 @@ type Props = {
   fieldProps: {
     lastNameKana: TextLikeFieldProps;
     firstNameKana: TextLikeFieldProps;
-    fullName: HiddenFieldProps;
+    fullNameKana: HiddenFieldProps;
     selectSample: Pick<
       SelectFieldProps,
       'handleBlur' | 'handleChange' | 'name' | 'ref'
@@ -89,7 +89,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
     touchedFields !== undefined &&
     touchedFields.lastNameKana === true &&
     touchedFields.firstNameKana === true &&
-    errors.fullName !== undefined;
+    errors.fullNameKana !== undefined;
 
   return (
     <OrganismFrame001 sectionHeadingText="業務を想定して主要なフィールドを実装する">
@@ -127,9 +127,9 @@ const ReactHookFormSample04: React.VFC<Props> = ({
             },
           ]}
           combinationItem={{
-            field: <HiddenField001 {...fieldProps.fullName} />,
+            field: <HiddenField001 {...fieldProps.fullNameKana} />,
             isVisibleErrorMessage: isVisibleFullNameKanaErrorMessage,
-            errorMessage: errors.fullName?.message,
+            errorMessage: errors.fullNameKana?.message,
           }}
           fieldDescriptionItems={[
             [

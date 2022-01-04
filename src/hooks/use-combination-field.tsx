@@ -24,8 +24,8 @@ function useCombinationField<IFormValues>({
 }): HiddenFieldProps {
   const { ref, name } = { ...register(nameProperty) };
 
-  const fullName = watch(combinationFieldNames);
-  const joinedFullName = fullName.join('') as UnpackNestedValue<
+  const fullNameKana = watch(combinationFieldNames);
+  const joinedFullName = fullNameKana.join('') as UnpackNestedValue<
     PathValue<IFormValues, Path<IFormValues>>
   >;
 
