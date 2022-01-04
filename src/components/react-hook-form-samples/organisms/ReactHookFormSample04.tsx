@@ -92,7 +92,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
     errors.fullName !== undefined;
 
   return (
-    <OrganismFrame001 sectionHeadingText="業務を想定した設計をする">
+    <OrganismFrame001 sectionHeadingText="業務を想定して主要なフィールドを実装する">
       <Frame001 headingText="Demo">
         <FieldHeading001 text="お名前（カナ）" badgeType="required" />
         <MultipleFieldUnit001
@@ -232,8 +232,6 @@ const ReactHookFormSample04: React.VFC<Props> = ({
             ],
           ]}
         />
-
-        <input type="submit" />
       </Frame001>
 
       <Frame001 headingText="この節で学んだポイント">
