@@ -3,6 +3,8 @@
 .Card001 {
   display: inline-block;
   border: 1px solid #999;
+  width: 100%;
+  max-width: 320px;
 }
 
 .NumberBoard {
@@ -22,7 +24,7 @@
 }
 
 .Button {
-  min-width: 100px;
   padding: 16px;
   cursor: pointer;
+  flex: 1 1 auto;
 }
