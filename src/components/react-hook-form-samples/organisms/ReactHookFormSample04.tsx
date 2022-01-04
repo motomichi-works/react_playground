@@ -157,11 +157,7 @@ const ReactHookFormSample04: React.VFC<Props> = ({
                 { label: 'Selectタグ選択肢1', value: 'selectTagChoice1' },
                 { label: 'Selectタグ選択肢2', value: 'selectTagChoice2' },
               ]}
-              isRed={
-                touchedFields !== undefined &&
-                touchedFields.selectSample === true &&
-                errors.selectSample !== undefined
-              }
+              isRed={errors.selectSample !== undefined}
             />
           }
           isVisibleErrorMessage={errors.selectSample !== undefined}
