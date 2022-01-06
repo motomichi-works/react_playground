@@ -1,0 +1,75 @@
+.TextLikeField002 {
+  position: relative;
+  font-size: 16px;
+  &.m_IconAbsoluteLeft {
+    .Field {
+      padding-left: 44px;
+    }
+  }
+  &.m_IconAbsoluteRight {
+    .Field {
+      padding-right: 44px;
+    }
+  }
+  &.m_Red {
+    .Field {
+      border-color: #e40909;
+      background: #ffdddd;
+    }
+  }
+}
+
+.Field {
+  display: block;
+  width: 100%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #444444;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #222222;
+  border-radius: 4px;
+  height: 44px;
+  font-size: 16px;
+  &::placeholder {
+    color: #aaaaaa;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 6px 0 #0000ff inset;
+  }
+  &[readonly] {
+    border-color: transparent;
+    background: none;
+    color: #222222;
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  &[disabled] {
+    // NOTE: !importantは原則として使用禁止です。ボタンとフィールドのdisabled、readonlyにだけ使用しています。
+    background: #eeeeee !important;
+    border-color: #cccccc !important;
+    color: #cccccc;
+    cursor: default;
+  }
+}
+
+.IconWrapper {
+  &:first-child {
+    left: 16px;
+  }
+  &:last-child {
+    right: 16px;
+  }
+  &:last-child,
+  &:first-child {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    color: #222222;
+  }
+}

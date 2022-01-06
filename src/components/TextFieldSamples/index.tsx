@@ -1,4 +1,5 @@
 import Template001 from 'components/common/templates/Template001';
+import Sample001Container from 'containers/TextFieldSamples/organisms/Sample001Container';
 
 const FontAwesome5: React.VFC = () => (
   <Template001
@@ -13,7 +14,7 @@ const FontAwesome5: React.VFC = () => (
       ],
     ]}
   >
-    <div>テキストフィールド</div>
+    <Sample001Container />
   </Template001>
 );
 
