@@ -9,6 +9,7 @@ import ReactHookFormSamples from 'containers/ReactHookFormSamples';
 import RiakutoChapter08 from 'containers/RiakutoChapter08';
 import RiakutoChapter09 from 'containers/RiakutoChapter09';
 import RiakutoChapter11 from 'containers/RiakutoChapter11';
+import TextFieldSamples from 'containers/TextFieldSamples';
 
 const App: React.FC = () => (
   <Router>
@@ -25,6 +26,7 @@ const App: React.FC = () => (
       <Route exact path={paths.riakutoChapter08} component={RiakutoChapter08} />
       <Route exact path={paths.riakutoChapter09} component={RiakutoChapter09} />
       <Route exact path={paths.riakutoChapter11} component={RiakutoChapter11} />
+      <Route exact path={paths.textFieldSamples} component={TextFieldSamples} />
       <Route component={NotFound} />
     </Switch>
   </Router>
